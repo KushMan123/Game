@@ -1,0 +1,116 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://art/ideal.png" type="Texture" id=2]
+[ext_resource path="res://art/death 1.png" type="Texture" id=3]
+[ext_resource path="res://art/death 2.png" type="Texture" id=4]
+[ext_resource path="res://art/death 3.png" type="Texture" id=5]
+[ext_resource path="res://art/death 4.png" type="Texture" id=6]
+[ext_resource path="res://art/death 5.png" type="Texture" id=7]
+[ext_resource path="res://art/running 1.png" type="Texture" id=8]
+[ext_resource path="res://art/running 3.png" type="Texture" id=9]
+[ext_resource path="res://art/running 4.png" type="Texture" id=10]
+[ext_resource path="res://art/running 8.png" type="Texture" id=11]
+[ext_resource path="res://art/running 7.png" type="Texture" id=12]
+[ext_resource path="res://art/running 6.png" type="Texture" id=13]
+[ext_resource path="res://art/running 5.png" type="Texture" id=14]
+[ext_resource path="res://art/running 2.png" type="Texture" id=15]
+[ext_resource path="res://art/ideal shoot 1.png" type="Texture" id=16]
+[ext_resource path="res://art/ideal shoot 4.png" type="Texture" id=17]
+[ext_resource path="res://art/ideal shoot 2.png" type="Texture" id=18]
+[ext_resource path="res://art/ideal shoot 3.png" type="Texture" id=19]
+[ext_resource path="res://art/jumping 2.png" type="Texture" id=20]
+[ext_resource path="res://art/jumping 3.png" type="Texture" id=21]
+[ext_resource path="res://art/fill.png" type="Texture" id=22]
+[ext_resource path="res://art/health bar.png" type="Texture" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 2 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 9.59343
+height = 18.2109
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( -21.7051, 9.6475 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 21.2349, -13.4409 )
+scale = Vector2( 0.021, 0.021 )
+frames = SubResource( 1 )
+animation = "idle"
+speed_scale = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 24.1137, -10.8269 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 37.6838, -8.26153 )
+scale = Vector2( 5, 5 )
+z_as_relative = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 87.4157, 9.20126 )
+current = true
+zoom = Vector2( 3, 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = -1.02344
+margin_top = -44.6562
+margin_right = 1691.98
+margin_bottom = 535.344
+rect_scale = Vector2( 0.03, 0.02 )
+value = 100.0
+texture_under = ExtResource( 22 )
+texture_over = ExtResource( 23 )
+texture_progress = ExtResource( 22 )
+tint_under = Color( 0.0627451, 0.0352941, 0.976471, 1 )
+tint_progress = Color( 0.0493927, 0.972656, 0.366765, 1 )
+nine_patch_stretch = true
+
+[node name="Tween" type="Tween" parent="HealthBar"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
