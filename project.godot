@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Player_in_xz",
 "language": "GDScript",
 "path": "res://Character/Player/Player_in_xz.gd"
+}, {
+"base": "Node2D",
+"class": "RotatingGroupTrap",
+"language": "GDScript",
+"path": "res://object/obstracle_xy_A/RotatingGroupTrap.gd"
 } ]
 _global_script_class_icons={
 "ENEMY": "",
 "Player": "",
-"Player_in_xz": ""
+"Player_in_xz": "",
+"RotatingGroupTrap": ""
 }
 
 [application]
