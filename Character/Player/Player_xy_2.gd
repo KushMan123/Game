@@ -37,7 +37,7 @@ func dead():
 	if current_hp <= 0:
 		is_dead = true
 		velocity = Vector2(0,0)
-		$AnimatedSprite.play("dead")
+		$AnimatedSprite.play("dead1")
 		$Collision.call_deferred("set_disabled", true)
 		$Timer.start()
 
@@ -54,20 +54,20 @@ func _physics_process(delta):
 	if is_dead == false and is_sinking == false:
 		if Input.is_action_pressed("ui_right"):
 			velocity.x = SPEED
-			$AnimatedSprite.play("run")
+			$AnimatedSprite.play("run1")
 			$AnimatedSprite.flip_h = false
 			if sign($Position2D.position.x) == -1:
 				$Position2D.position.x *= -1
 		elif Input.is_action_pressed("ui_left"):
 			velocity.x = -SPEED
-			$AnimatedSprite.play("run")
+			$AnimatedSprite.play("run1")
 			$AnimatedSprite.flip_h = true
 			if sign($Position2D.position.x) == 1:
 				$Position2D.position.x *= -1
 		else:
 			velocity.x = 0
 			if on_ground == true:
-				$AnimatedSprite.play("idle")
+				$AnimatedSprite.play("idle1")
 		if Input.is_action_pressed("ui_up"):
 			if on_ground == true:
 				velocity.y = JUMP_SPEED
@@ -100,9 +100,9 @@ func _physics_process(delta):
 		else:
 			on_ground = false
 			if velocity.y < 0 :
-				$AnimatedSprite.play("jump")
+				$AnimatedSprite.play("jump1")
 			else:
-				$AnimatedSprite.play("fall")
+				$AnimatedSprite.play("fall1")
 			
 		velocity = move_and_slide(velocity, FLOOR)
 		
