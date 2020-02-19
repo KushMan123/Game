@@ -17,12 +17,16 @@ var before_direction=Vector2()
 var direction=Vector2()
 var Position2d_position=Vector2(35,35)
 var ideal_state
+var audio
 
 var shooting = true
 var can_shoot=true
 var facing="front"
 
 func _ready() -> void:
+	audio = AudioStreamPlayer2D.new()
+	self.add_child(audio)
+	audio.stream = load('res://Audio and sound effects/walking.wav')
 	in_which_plane()
 	print(HEALTH)
 	$Shooting_timer.wait_time=shoot_cooldown
@@ -102,6 +106,7 @@ func check_trap_collision(direction: Vector2):
 		
 func update_animation(direction,before_direction):
 	if direction.x==0 and direction.y==0 and $AnimatedSprite.is_playing():
+		audio.stop()
 		if before_direction.x>0:
 			$AnimatedSprite.stop()
 			$AnimatedSprite.play("ideal_right")
@@ -115,6 +120,8 @@ func update_animation(direction,before_direction):
 			$AnimatedSprite.stop()
 			$AnimatedSprite.play("ideal_back")
 	else:
+		if !audio.playing:
+			audio.play()
 		if direction.x<0:
 			$AnimatedSprite.play("walking left")
 		if direction.x>0:
@@ -151,6 +158,8 @@ func shoot_condition(shooting_condition: bool):
 	shooting=shooting_condition
 
 func shoot():
+	audio.stream = load('res://Audio and sound effects/magic_fire.wav')
+	audio.play()
 	if can_shoot and shooting:
 		can_shoot = false
 		$Shooting_timer.start()
