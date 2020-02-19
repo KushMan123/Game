@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Demo_1"
-run/main_scene="res://Character/Player_abstract.tscn"
+run/main_scene="res://Character/Player/Player_in_xz.tscn"
 config/icon="res://icon.png"
 
 [input]
