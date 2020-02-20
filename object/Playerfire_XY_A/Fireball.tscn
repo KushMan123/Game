@@ -3,8 +3,6 @@
 [ext_resource path="res://object/Playerfire_XY_A/Fireball.gd" type="Script" id=1]
 [ext_resource path="res://object/Playerfire_XY_A/tile_50.png" type="Texture" id=2]
 
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
@@ -21,6 +19,7 @@ height = 6.42043
 modulate = Color( 0.945098, 0.580392, 0.0156863, 1 )
 self_modulate = Color( 0.94902, 0.388235, 0.0509804, 1 )
 position = Vector2( -1.60731, 1.53975 )
+scale = Vector2( 3, 3 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

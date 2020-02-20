@@ -5,31 +5,41 @@
 [ext_resource path="res://Character/Player/player animation_xy_1.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
+height = 43.6756
 
 [node name="Player_xy_1" instance=ExtResource( 1 )]
-position = Vector2( 68, 126 )
+position = Vector2( 7.43457, 11.8285 )
+scale = Vector2( 2, 2 )
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-position = Vector2( 21.235, -13.441 )
-scale = Vector2( 0.021, 0.021 )
+position = Vector2( 12.1931, -42.5633 )
+scale = Vector2( 0.0332089, 0.030316 )
 frames = ExtResource( 3 )
-animation = "attack"
-frame = 4
+animation = "run"
 playing = true
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 21.235, -5.441 )
+position = Vector2( 18.1232, -42.8407 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." index="2"]
+position = Vector2( 11.9242, -94.6016 )
 current = true
+zoom = Vector2( 0.75, 0.6 )
+limit_smoothed = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_limits = true
 
 [node name="HealthBar" type="TextureProgress" parent="." index="4"]
-margin_left = -1.02344
-margin_top = -44.6562
-margin_right = 1691.98
-margin_bottom = 535.344
+margin_left = 631.888
+margin_top = 39.7314
+margin_right = 2324.89
+margin_bottom = 619.732
 rect_scale = Vector2( 0.03, 0.02 )
 value = 100.0
 tint_under = Color( 0.0627451, 0.0352941, 0.976471, 1 )
@@ -42,6 +52,7 @@ nine_patch_stretch = true
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="." index="6"]
-position = Vector2( 37.6838, -8.26153 )
+position = Vector2( 40.7342, -35.4895 )
 scale = Vector2( 5, 5 )
 z_as_relative = false
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

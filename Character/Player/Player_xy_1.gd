@@ -1,9 +1,9 @@
 extends  Player
 signal health_update(health)
 signal killed()
-const SPEED=150
+const SPEED=350
 const GRAVITY=10
-const JUMP_POWER =-350
+const JUMP_POWER =-550
 const FLOOR = Vector2(0,-1)
 
 const FIREBALL =preload("res://object/Playerfire_XY_A/Fireball.tscn")
@@ -115,7 +115,7 @@ func _physics_process(delta):
 					fireball.set_fireball_direction(-1)
 				get_parent().add_child(fireball)
 				fireball.position=$Position2D.global_position
-				
+				$AnimatedSprite.play("attack")
 			
 				
 				can_fire=true
@@ -137,7 +137,7 @@ func _physics_process(delta):
 		
 		if get_slide_count()>0:
 			for i in range(get_slide_count()):
-				if "enemy" in get_slide_collision(i).collider.name:
+				if "enemy_xy_A1" in get_slide_collision(i).collider.name:
 					dead()
 		
 		if get_slide_count()>0:
@@ -161,7 +161,7 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("SatgeOne.tscn") #to scene where it again need to start
+	get_tree().change_scene("res://stage/xz/main.tscn") #to scene where it again need to start
 
 func crown_power_up():
 	fireball_power=2
