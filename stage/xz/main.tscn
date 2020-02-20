@@ -572,7 +572,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 7180.48, -1077.26 )
+position = Vector2( 1412.36, 491.944 )
 
 [node name="sound_area" type="Node2D" parent="."]
 

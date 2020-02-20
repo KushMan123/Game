@@ -1,6 +1,6 @@
 extends Character
 
-onready var dialog = get_node("DialogBox")
+onready var dialog = get_node("CanvasLayer/DialogBox")
 
 func _ready() -> void:
 	$AnimatedSprite.play("ideal")

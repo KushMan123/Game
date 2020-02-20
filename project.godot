@@ -136,7 +136,7 @@ _global_script_class_icons={
 
 config/name="Demo_1"
 run/main_scene="res://stage/xz/main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/Character spriites/Player/Front/Ideal/Ideal 1.png"
 
 [autoload]
 
