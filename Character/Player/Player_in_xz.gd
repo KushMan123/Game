@@ -183,6 +183,7 @@ func _on_Timer_timeout() -> void:
 
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
 	if area is EnemyBullet:
+		print("Hit taken")
 		damage(area.damage)
 	pass
 
