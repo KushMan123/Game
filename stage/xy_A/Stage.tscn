@@ -59,11 +59,11 @@ format = 1
 tile_data = PoolIntArray( 655356, 1, 0, 655357, 3, 0, 655359, 3, 0, 589825, 3, 0, 589827, 3, 0, 589829, 3, 0, 589831, 3, 0, 589833, 3, 0, 589834, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0 )
 
 [node name="enemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 783.262, 581.238 )
+position = Vector2( 1100.6, 594.599 )
 speed = 150
 size = Vector2( 5, 5 )
 
 [node name="enemyRay" parent="." instance=ExtResource( 11 )]
-position = Vector2( 2170.76, 647.801 )
+position = Vector2( 2154.06, 662.833 )
 [connection signal="In_door_area" from="door" to="." method="_on_door_In_door_area"]
 [connection signal="key_found" from="key" to="." method="_on_key_key_found"]
