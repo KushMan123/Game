@@ -3,6 +3,8 @@ class_name Player_in_xz
 
 signal shoot
 
+onready var tween=get_node("Tween")
+
 export (PackedScene) var Bullet
 export (float) var shoot_cooldown
 export var move_speed=1500
@@ -94,21 +96,21 @@ func limit_velocity(velocity:Vector2):
 func check_box_collision(direction: Vector2):
 	if abs(direction.x)+abs(direction.y)>1:
 		return
-	#var box:= get_slide_collision(0).collider as Box
-	#if box:
-	#	box.push(direction.normalized()*push_speed)
+	var box:= get_slide_collision(0).collider as Box
+	if box:
+		box.push(direction.normalized()*push_speed)
 	pass
 
 func check_trap_collision(direction: Vector2):
-#	var trap:= get_slide_collision(0).collider as Trap 
-#	if trap:
-#		var move_to=calculate_position_after_hit(direction)
-#		print(move_to)
-#		tween.interpolate_property(self,"position",get_position(),move_to,0.1,Tween.TRANS_BOUNCE,Tween.EASE_OUT)
-#		tween.start()
-#		yield(tween,"tween_completed")
-#		#opacity_decrease()
-#		when_hit()
+	var trap:= get_slide_collision(0).collider as Trap 
+	if trap:
+		var move_to=calculate_position_after_hit(direction)
+		print(move_to)
+		tween.interpolate_property(self,"position",get_position(),move_to,0.1,Tween.TRANS_BOUNCE,Tween.EASE_OUT)
+		tween.start()
+		yield(tween,"tween_completed")
+		#opacity_decrease()
+		when_hit()
 	pass
 		
 func update_animation(direction,before_direction):
@@ -177,8 +179,8 @@ func _on_Timer_timeout() -> void:
 
 
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
-#	if area is EnemyBullet:
-#		damage(area.damage)
+	if area is EnemyBullet:
+		damage(area.damage)
 	pass
 
 
