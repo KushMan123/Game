@@ -53,6 +53,7 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." index="2"]
 current = true
+zoom = Vector2( 1.5, 1.5 )
 
 [node name="Bullet_area" type="Area2D" parent="." index="4"]
 
