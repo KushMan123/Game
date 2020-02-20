@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 
-[node name="Player_xy_1" index="0" instance=ExtResource( 1 )]
+[node name="Player_xy_1" instance=ExtResource( 1 )]
 position = Vector2( 68, 126 )
 script = ExtResource( 2 )
 
@@ -15,7 +15,7 @@ position = Vector2( 21.235, -13.441 )
 scale = Vector2( 0.021, 0.021 )
 frames = ExtResource( 3 )
 animation = "attack"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" parent="." index="1"]

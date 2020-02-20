@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://stage/xy_A/SatgeOne.gd" type="Script" id=1]
+
+
+[node name="SatgeOne" type="Node2D"]
+position = Vector2( 2.63022, 0.847122 )
+script = ExtResource( 1 )

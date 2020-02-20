@@ -1,0 +1,53 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://art/waterAnimation1.png" type="Texture" id=1]
+[ext_resource path="res://art/waterAnimation4.png" type="Texture" id=2]
+[ext_resource path="res://art/waterAnimation5.png" type="Texture" id=3]
+[ext_resource path="res://art/waterAnimation33.png" type="Texture" id=4]
+[ext_resource path="res://art/waterAnimation20.png" type="Texture" id=5]
+[ext_resource path="res://art/waterAnimation6.png" type="Texture" id=6]
+[ext_resource path="res://art/waterAnimation7.png" type="Texture" id=7]
+[ext_resource path="res://art/waterAnimation8.png" type="Texture" id=8]
+[ext_resource path="res://art/waterAnimation25.png" type="Texture" id=9]
+[ext_resource path="res://art/waterAnimation24.png" type="Texture" id=10]
+[ext_resource path="res://art/waterAnimation26.png" type="Texture" id=11]
+[ext_resource path="res://art/waterAnimation28.png" type="Texture" id=12]
+[ext_resource path="res://art/waterAnimation30.png" type="Texture" id=13]
+[ext_resource path="res://art/waterAnimation31.png" type="Texture" id=14]
+[ext_resource path="res://art/waterAnimation32.png" type="Texture" id=15]
+[ext_resource path="res://art/waterAnimation34.png" type="Texture" id=16]
+[ext_resource path="res://art/waterAnimation10.png" type="Texture" id=17]
+[ext_resource path="res://art/waterAnimation17.png" type="Texture" id=18]
+[ext_resource path="res://art/waterAnimation11.png" type="Texture" id=19]
+[ext_resource path="res://art/waterAnimation16.png" type="Texture" id=20]
+[ext_resource path="res://art/waterAnimation9.png" type="Texture" id=21]
+[ext_resource path="res://art/waterAnimation12.png" type="Texture" id=22]
+[ext_resource path="res://art/waterAnimation15.png" type="Texture" id=23]
+[ext_resource path="res://art/waterAnimation29.png" type="Texture" id=24]
+[ext_resource path="res://art/waterAnimation13.png" type="Texture" id=25]
+[ext_resource path="res://art/waterAnimation27.png" type="Texture" id=26]
+[ext_resource path="res://art/waterAnimation18.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 5 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 12 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "water_movement",
+"speed": 45.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 496.188, 39.5852 )
+
+[node name="Water" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "water_movement"
+frame = 14
+speed_scale = 0.5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.44641, 82.1802 )
+shape = SubResource( 2 )
