@@ -16,17 +16,15 @@ var velocity = Vector2()
 
 var is_dead = false
 
-func dead():
-	hp -= 1
-	if hp <= 0:
+func dead(damage):
+	hp -=damage
+	if hp <=0:
 		is_dead = true
-		velocity = Vector2(0,0)
-		
-		$CollisionShape2D.call_deferred("set_disabled",true)
+		velocity =Vector2(0, 0)
+		$AnimatedSprite.play("dead")
+		$CollisionShape2D.set_deferred("disabled",true)
 		$Timer.start()
-		if scale > Vector2(0.45,0.45):
-			get_parent().get_node("Screenshake").screen_shake(1, 10, 100)
-
+		
 func _ready():
 	scale = size
 	pass 

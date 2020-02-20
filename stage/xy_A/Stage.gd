@@ -7,11 +7,11 @@ func _ready():
 func _physics_process(delta):
 	var  pos=Player.position
 
-	if Player.position.y>10000:
+	if Player.position.y>1000:
 
 
 		Player.dead()
-		Player.position=Vector2(0,345)
+		Player.position=Vector2(0,500)
 
 
 		

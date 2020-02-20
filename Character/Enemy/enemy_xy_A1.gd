@@ -23,8 +23,8 @@ func dead(damage):
 		$AnimatedSprite.play("dead")
 		$CollisionShape2D.set_deferred("disabled",true)
 		$Timer.start()
-		if scale > Vector2(1,1):
-			get_parent().get_node("ScreenShake").screen_shake(1,10,100)
+#		if scale > Vector2(1,1):
+#			get_parent().get_node("ScreenShake").screen_shake(1,10,100)
 			
 	
 func _physics_process(delta)->void:
