@@ -200,6 +200,7 @@ func _on_Area2D_area_entered(area):
 		music.stream = load('res://Audio and sound effects/village.ogg') 
 		music.play()
 	elif area.name == 'forest':
+		walking.stream = load('res://Audio and sound effects/forest_walking.wav')
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
 		music.play()
