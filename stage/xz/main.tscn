@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://stage/xz/main.gd" type="Script" id=1]
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Areas/town area.gd" type="Script" id=13]
 [ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Waterfall animation/1.png" type="Texture" id=16]
+[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=17]
+[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=18]
+[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=19]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
@@ -54,6 +58,14 @@ extents = Vector2( 2024.85, 2681.02 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 2379.01, 1296.04 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -573,7 +585,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 785.252, 511.799 )
+position = Vector2( 6893.65, -1052.26 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -603,9 +615,17 @@ position = Vector2( 2446.26, 5042.12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/wizard_place"]
 shape = SubResource( 13 )
 
-[node name="Node2D" parent="." instance=ExtResource( 15 )]
+[node name="Leaf particle" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3641.67, -1992.43 )
 scale = Vector2( 2, 2 )
+
+[node name="Waterfall" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
+position = Vector2( 6658, -1509.04 )
+frames = SubResource( 14 )
+frame = 1
+playing = true
 [connection signal="body_entered" from="Spawning_area_collection/Area_1" to="Spawning_area_collection/Area_1" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning_area_collection/Area_1" to="." method="_on_Area2D_player_entered"]
 [connection signal="shoot" from="Spawning_area_collection/Area_1/Enemy_Collection/EnemyFollowsU" to="." method="_on_shoot"]
