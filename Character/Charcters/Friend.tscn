@@ -56,7 +56,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.44097, 0.44097 )
 frames = SubResource( 1 )
 animation = "ideal"
-frame = 14
+frame = 17
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -71,6 +71,7 @@ shape = SubResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 32 )]
+visible = false
 margin_left = 110.634
 margin_top = 447.713
 margin_right = 770.635
