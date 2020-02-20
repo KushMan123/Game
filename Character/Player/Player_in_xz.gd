@@ -3,6 +3,8 @@ class_name Player_in_xz
 
 signal shoot
 
+onready var tween=get_node("Tween")
+
 export (PackedScene) var Bullet
 export (float) var shoot_cooldown
 export var move_speed=1500
@@ -19,6 +21,7 @@ var Position2d_position=Vector2(35,35)
 var ideal_state
 var walking
 var shoot
+var music
 
 var shooting = true
 var can_shoot=true
@@ -60,6 +63,8 @@ func _physics_process(delta: float) -> void:
 		print("cannot move")
 
 func audio_loader():
+	music = AudioStreamPlayer2D.new()
+	self.add_child(music)
 	walking = AudioStreamPlayer2D.new()
 	self.add_child(walking)
 	walking.stream = load('res://Audio and sound effects/walking.wav')
@@ -94,21 +99,21 @@ func limit_velocity(velocity:Vector2):
 func check_box_collision(direction: Vector2):
 	if abs(direction.x)+abs(direction.y)>1:
 		return
-	#var box:= get_slide_collision(0).collider as Box
-	#if box:
-	#	box.push(direction.normalized()*push_speed)
+	var box:= get_slide_collision(0).collider as Box
+	if box:
+		box.push(direction.normalized()*push_speed)
 	pass
 
 func check_trap_collision(direction: Vector2):
-#	var trap:= get_slide_collision(0).collider as Trap 
-#	if trap:
-#		var move_to=calculate_position_after_hit(direction)
-#		print(move_to)
-#		tween.interpolate_property(self,"position",get_position(),move_to,0.1,Tween.TRANS_BOUNCE,Tween.EASE_OUT)
-#		tween.start()
-#		yield(tween,"tween_completed")
-#		#opacity_decrease()
-#		when_hit()
+	var trap:= get_slide_collision(0).collider as Trap 
+	if trap:
+		var move_to=calculate_position_after_hit(direction)
+		print(move_to)
+		tween.interpolate_property(self,"position",get_position(),move_to,0.1,Tween.TRANS_BOUNCE,Tween.EASE_OUT)
+		tween.start()
+		yield(tween,"tween_completed")
+		#opacity_decrease()
+		when_hit()
 	pass
 		
 func update_animation(direction,before_direction):
@@ -164,9 +169,9 @@ func shoot_condition(shooting_condition: bool):
 	print(shooting_condition)
 	shooting=shooting_condition
 
-func shoot():
-	shoot.play()
+func shoot():	
 	if can_shoot and shooting:
+		shoot.play()
 		can_shoot = false
 		$Shooting_timer.start()
 		var dir = Vector2(1, 0).rotated($"firing direction".global_rotation)
@@ -177,8 +182,8 @@ func _on_Timer_timeout() -> void:
 
 
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
-#	if area is EnemyBullet:
-#		damage(area.damage)
+	if area is EnemyBullet:
+		damage(area.damage)
 	pass
 
 
@@ -187,3 +192,19 @@ func _on_Hit_timer_timeout() -> void:
 	
 func in_which_plane():
 	print("in xz plane")
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == 'village':
+		music.set_volume_db(10)
+		music.stream = load('res://Audio and sound effects/village.ogg') 
+		music.play()
+	elif area.name == 'forest':
+		walking.stream = load('res://Audio and sound effects/forest_walking.wav')
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
+		music.play()
+	elif area.name == 'wizard_place':
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
+		music.play()

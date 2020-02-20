@@ -22,6 +22,9 @@ playing = true
 position = Vector2( 21.235, -5.441 )
 shape = SubResource( 1 )
 
+[node name="Camera2D" parent="." index="2"]
+current = true
+
 [node name="HealthBar" type="TextureProgress" parent="." index="4"]
 margin_left = -1.02344
 margin_top = -44.6562
