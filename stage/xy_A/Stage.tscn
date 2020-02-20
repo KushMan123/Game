@@ -24,7 +24,7 @@ position = Vector2( 2535.43, 320.498 )
 position = Vector2( 1976.01, 350.534 )
 
 [node name="EnemyFollowsU" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2227.53, 738.858 )
+position = Vector2( 1769.53, 432.858 )
 
 [node name="ground" parent="." instance=ExtResource( 6 )]
 modulate = Color( 0.32549, 0.741176, 0.156863, 1 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tileset/Town set 1.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/main_scene_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stage/xz/main_scene_1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=3]
 
 [node name="Town" type="Node"]
