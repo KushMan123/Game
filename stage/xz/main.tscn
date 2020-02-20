@@ -15,6 +15,10 @@
 [ext_resource path="res://Areas/town area.gd" type="Script" id=13]
 [ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=17]
+[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=18]
+[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=19]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
@@ -54,6 +58,14 @@ extents = Vector2( 2024.85, 2681.02 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 2379.01, 1296.04 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ null, ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -571,14 +583,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 882.21, 478.691 )
-
-[node name="Tree leaves" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
-collision_layer = 64
-collision_mask = 135
-format = 1
-tile_data = PoolIntArray( -1900489, 29, 0, -1769467, 29, 0, -1769466, 29, 0, -1769455, 29, 0, -1769435, 29, 0, -1769343, 29, 0, -1703924, 29, 0, -1703919, 29, 0, -1703909, 29, 0, -1703885, 29, 0, -1703874, 29, 0, -1703862, 29, 0, -1703856, 29, 0, -1703844, 29, 0, -1638349, 29, 0, -1638314, 29, 0, -1638313, 29, 0, -1638277, 29, 0, -1638272, 24, 0, -1572790, 29, 0, -1572773, 29, 0, -1507325, 29, 0, -1507293, 22, 0, -1507289, 29, 0, -1507269, 29, 0, -1507249, 29, 0, -1507200, 24, 0, -1441760, 29, 0, -1441667, 29, 0, -1376246, 29, 0, -1376229, 22, 0, -1376190, 29, 0, -1376170, 29, 0, -1376166, 29, 0, -1376133, 24, 0, -1376126, 22, 0, -1310710, 29, 0, -1310703, 29, 0, -1310667, 29, 0, -1310645, 29, 0, -1310642, 29, 0, -1310591, 29, 0, -1245159, 29, 0, -1245153, 22, 0, -1245144, 29, 0, -1179645, 29, 0, -1179623, 29, 0, -1179588, 29, 0, -1179582, 29, 0, -1179558, 29, 0, -1179523, 22, 0, -1114090, 22, 0, -1113984, 22, 0, -1048541, 22, 0, -1048497, 29, 0, -1048483, 29, 0, -1048452, 22, 0, -983027, 29, 0, -983012, 29, 0, -983011, 29, 0, -982967, 29, 0, -982965, 29, 0, -982954, 29, 0, -917504, 29, 0, -917485, 29, 0, -917484, 29, 0, -917470, 29, 0, -851956, 22, 0, -851942, 22, 0, -851927, 29, 0, -851914, 29, 0, -851909, 29, 0, -851904, 29, 0, -851899, 29, 0, -851877, 29, 0, -851874, 29, 0, -786425, 29, 0, -786356, 29, 0, -720879, 29, 0, -720872, 29, 0, -720817, 29, 0, -720800, 29, 0, -655358, 29, 0, -655274, 29, 0, -589734, 29, 0, -589696, 29, 0, -524274, 22, 0, -524255, 22, 0, -524215, 29, 0, -524192, 29, 0, -458665, 29, 0, -458660, 29, 0, -393205, 29, 0, -393139, 29, 0, -327660, 29, 0, -327647, 29, 0, -327552, 29, 0, -262093, 29, 0, -262030, 29, 0, -196527, 29, 0, -130998, 29, 0, -130959, 29, 0, -130948, 29, 0, -65458, 29, 0, -65447, 29, 0, -65441, 29, 0, -65408, 29, 0, 85, 29, 0, 102, 29, 0, 65649, 29, 0, 131155, 29, 0, 131164, 29, 0, 131199, 29, 0, 196722, 29, 0, 196732, 29, 0, 262270, 29, 0, 327793, 29, 0, 393297, 29, 0, 458833, 29, 0, 589928, 29, 0, 589938, 29, 0, 655441, 29, 0, 655452, 29, 0, 720897, 29, 0, 852083, 29, 0, 983141, 29, 0, 983153, 29, 0, 1114195, 29, 0, 1114200, 29, 0, 1179743, 29, 0, 1245297, 29, 0, 1376291, 29, 0, 1441882, 29, 0, 1507444, 29, 0, 1572944, 29, 0, 1572976, 29, 0, 1638504, 29, 0, 1704022, 29, 0, 1704029, 29, 0, 1704051, 29, 0, 1835109, 29, 0, 1900656, 29, 0, 2031699, 29, 0, 2031730, 29, 0, 2097269, 29, 0, 2097278, 29, 0, 2228327, 29, 0, 2359296, 29, 0, 2424840, 29, 0, 2490450, 29, 0, 2490492, 29, 0, 2621535, 29, 0, 2621543, 29, 0, 2687000, 29, 0, 2752522, 29, 0, 2752624, 29, 0, 2752637, 29, 0, 3014656, 29, 0, 3145764, 29, 0, 3145774, 29, 0, 3145783, 29, 0, 3145784, 29, 0, 3145809, 29, 0, 3145819, 29, 0, 3145820, 29, 0, 3145831, 29, 0, 3145852, 29, 0, 3538944, 29, 0, 3735587, 29, 0, 3735596, 29, 0, 3735600, 29, 0, 3735607, 29, 0, 3735614, 29, 0, 3801117, 29, 0, 3801129, 29, 0, 3801139, 29, 0, 3801146, 29, 0, 3866648, 29, 0, 3866656, 29, 0, 3866662, 29, 0, 3866689, 29, 0, 3932204, 29, 0, 3932215, 29, 0, 3932221, 29, 0, 3997719, 29, 0, 4063296, 29, 0, 4128789, 29, 0, 4128808, 29, 0, 4194317, 29, 0, 4194329, 29, 0, 4194361, 29, 0, 4259877, 29, 0, 4259894, 29, 0, 4259905, 29, 0, 4325396, 29, 0, 4325436, 29, 0, 4390939, 29, 0, 4456471, 29, 0, 4456512, 29, 0, 4653081, 29, 0, 4653121, 29, 0, 4718605, 29, 0, 4718612, 29, 0, 4784141, 29, 0, 4849688, 29, 0, 4849728, 29, 0, 4980756, 29, 0, 5046297, 29, 0, 5046337, 29, 0, 5111840, 29, 0, 5177364, 29, 0, 5242904, 29, 0, 5242909, 29, 0, 5242915, 29, 0, 5373965, 29, 0, 5570624, 29, 0 )
+position = Vector2( 1412.36, 491.944 )
 
 [node name="sound_area" type="Node2D" parent="."]
 
@@ -602,6 +607,18 @@ position = Vector2( 2446.26, 5042.12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/wizard_place"]
 shape = SubResource( 13 )
 
+[node name="Leaf particle" parent="." instance=ExtResource( 15 )]
+position = Vector2( 3641.67, -1992.43 )
+scale = Vector2( 2, 2 )
+
+[node name="Waterfall" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
+position = Vector2( 6658, -1509.04 )
+frames = SubResource( 14 )
+frame = 2
+playing = true
+
 [node name="leaves" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3641.67, -1992.43 )
 scale = Vector2( 2, 2 )
@@ -614,6 +631,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="waterfall"]
 position = Vector2( -431.412, 0 )
+stream = ExtResource( 16 )
 [connection signal="body_entered" from="Spawning_area_collection/Area_1" to="Spawning_area_collection/Area_1" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning_area_collection/Area_1" to="." method="_on_Area2D_player_entered"]
 [connection signal="shoot" from="Spawning_area_collection/Area_1/Enemy_Collection/EnemyFollowsU" to="." method="_on_shoot"]
