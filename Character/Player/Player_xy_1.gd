@@ -2,12 +2,12 @@ extends  Player
 signal health_update(health)
 signal killed()
 const SPEED=150
-const GRAVITY=0
+const GRAVITY=10
 const JUMP_POWER =-350
 const FLOOR = Vector2(0,-1)
 
-## FIREBALL =preload("res://Fireball.tscn")
-#const FIREBALL2=preload("res://Fireball2.tscn")
+const FIREBALL =preload("res://object/Playerfire_XY_A/Fireball.tscn")
+const FIREBALL2=preload("res://object/Playerfire_XY_A/Fireball2.tscn")
 var is_attacking =false
 ##
 var on_ground= false
@@ -95,43 +95,44 @@ func _physics_process(delta):
 			
 			
 		var fireball=null
-#		if Input.is_action_just_pressed("ui_focus_next") and can_fire==true :
-#			if is_walking==false:
-#				can_fire=false
-#				if is_on_floor():
-#					 velocity.x=0
-#
-#				if fireball_power==1:
-#					 fireball=FIREBALL.instance()
-#
-#				elif fireball_power==2:
-#					 fireball=FIREBALL2.instance()
-#
-#
-#				if sign($Position2D.position.x) == 1:
-#					fireball.set_fireball_direction(1)
-#				else:
-#					fireball.set_fireball_direction(-1)
-#				get_parent().add_child(fireball)
-#				fireball.position=$Position2D.global_position
-#
-#
-#
-#				can_fire=true
+		
+		if Input.is_action_just_pressed("ui_focus_next") and can_fire==true :
+			if is_walking==false:
+				can_fire=false
+				if is_on_floor():
+					 velocity.x=0
+				
+				if fireball_power==1:
+					 fireball=FIREBALL.instance()
+					
+				elif fireball_power==2:
+					 fireball=FIREBALL2.instance()
+					 
+			
+				if sign($Position2D.position.x) == 1:
+					fireball.set_fireball_direction(1)
+				else:
+					fireball.set_fireball_direction(-1)
+				get_parent().add_child(fireball)
+				fireball.position=$Position2D.global_position
+				
+			
+				
+				can_fire=true
 	
-#		velocity.y +=  GRAVITY
-#		if is_on_floor():
-#			on_ground = true
-#		else:
-#			on_ground = false
-#			if velocity.y < 0:
-#				$AnimatedSprite.play("jump")
-#			else:
-#				$AnimatedSprite.play("fall")
+		velocity.y +=  GRAVITY
+		if is_on_floor():
+			on_ground = true
+		else:
+			on_ground = false
+			if velocity.y < 0:
+				$AnimatedSprite.play("jump")
+			else:
+				$AnimatedSprite.play("fall")
 			
 		
-		velocity = move_and_slide(velocity,FLOOR)	
-		
+		velocity = move_and_slide(velocity,FLOOR)
+#
 			
 		
 		if get_slide_count()>0:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_image.png-37525ab447ea345f39cde90d0e093d42.stex"
+path="res://.import/foreground.png-72a2af1370982ed013141e9d7b1ab27b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stage_xy_tileset/background/background_image.png"
-dest_files=[ "res://.import/background_image.png-37525ab447ea345f39cde90d0e093d42.stex" ]
+source_file="res://Background_XY_A/foreground.png"
+dest_files=[ "res://.import/foreground.png-72a2af1370982ed013141e9d7b1ab27b.stex" ]
 
 [params]
 
