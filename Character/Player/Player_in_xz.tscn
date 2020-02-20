@@ -82,3 +82,5 @@ scale = Vector2( 0.400956, 0.473691 )
 texture = ExtResource( 6 )
 
 [node name="Hit timer" type="Timer" parent="." index="8"]
+[connection signal="timeout" from="Shooting_timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Hit timer" to="." method="_on_Hit_timer_timeout"]

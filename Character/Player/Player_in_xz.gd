@@ -169,6 +169,7 @@ func shoot_condition(shooting_condition: bool):
 func shoot():
 	shoot.play()
 	if can_shoot and shooting:
+		print("shooting _produced")
 		can_shoot = false
 		$Shooting_timer.start()
 		var dir = Vector2(1, 0).rotated($"firing direction".global_rotation)
