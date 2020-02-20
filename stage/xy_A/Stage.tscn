@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://stage/xy_A/Stage.gd" type="Script" id=1]
+[ext_resource path="res://XY_A_PowerUp/PowerUP.tscn" type="PackedScene" id=2]
+[ext_resource path="res://object/XY_A_doorAndKey/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://object/XY_A_doorAndKey/key.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Character/Enemy/Enemy_xy_A_FollowsU.tscn" type="PackedScene" id=5]
+[ext_resource path="res://XY_A_Tilest/tileset/ground.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Character/Player/Player_xy_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Background_XY_A/background.png" type="Texture" id=8]
+[ext_resource path="res://Background_XY_A/foreground.png" type="Texture" id=9]
+
+[node name="Stage" type="Node2D"]
+position = Vector2( 2.63022, 0.847122 )
+script = ExtResource( 1 )
+
+[node name="PowerUP" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3509.58, 152.104 )
+
+[node name="door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3991.86, 626.926 )
+
+[node name="key" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2848.43, 296.459 )
+
+[node name="EnemyFollowsU" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2227.53, 738.858 )
+
+[node name="ground" parent="." instance=ExtResource( 6 )]
+tile_data = PoolIntArray( 196608, 1, 0, 196609, 3, 0, 196611, 0, 0 )
+
+[node name="Player_xy_1" parent="." instance=ExtResource( 7 )]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 416.048, 181.468 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2( 423.449, 180.716 )
+texture = ExtResource( 9 )
