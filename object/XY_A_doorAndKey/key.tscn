@@ -3,8 +3,6 @@
 [ext_resource path="res://object/XY_A_doorAndKey/key.gd" type="Script" id=1]
 [ext_resource path="res://object/Playerfire_XY_A/tile_50.png" type="Texture" id=2]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 37.3363
 

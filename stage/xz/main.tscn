@@ -587,6 +587,7 @@ shape = SubResource( 11 )
 position = Vector2( 6502.88, 1045.92 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/forest"]
+position = Vector2( -0.000488281, -27.3608 )
 shape = SubResource( 12 )
 
 [node name="wizard_place" type="Area2D" parent="sound_area"]
