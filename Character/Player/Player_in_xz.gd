@@ -21,6 +21,7 @@ var Position2d_position=Vector2(35,35)
 var ideal_state
 var walking
 var shoot
+var music
 
 var shooting = true
 var can_shoot=true
@@ -62,6 +63,8 @@ func _physics_process(delta: float) -> void:
 		print("cannot move")
 
 func audio_loader():
+	music = AudioStreamPlayer2D.new()
+	self.add_child(music)
 	walking = AudioStreamPlayer2D.new()
 	self.add_child(walking)
 	walking.stream = load('res://Audio and sound effects/walking.wav')
@@ -166,10 +169,9 @@ func shoot_condition(shooting_condition: bool):
 	print(shooting_condition)
 	shooting=shooting_condition
 
-func shoot():
-	shoot.play()
+func shoot():	
 	if can_shoot and shooting:
-		print("shooting _produced")
+		shoot.play()
 		can_shoot = false
 		$Shooting_timer.start()
 		var dir = Vector2(1, 0).rotated($"firing direction".global_rotation)
@@ -190,3 +192,18 @@ func _on_Hit_timer_timeout() -> void:
 	
 func in_which_plane():
 	print("in xz plane")
+
+
+func _on_Area2D_area_entered(area):
+	if area.name == 'village':
+		music.set_volume_db(10)
+		music.stream = load('res://Audio and sound effects/village.ogg') 
+		music.play()
+	elif area.name == 'forest':
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
+		music.play()
+	elif area.name == 'wizard_place':
+		music.set_volume_db(0)
+		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
+		music.play()
