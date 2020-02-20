@@ -30,16 +30,16 @@ func _on_Fireball_body_entered(body):
 	
 	if "enemy" in body.name:
 		
-		body.dead()
+			body.dead(1)
 	elif "enemyRay" in body.name:
-		body.dead()
+		body.dead(1)
 		
 	elif "enemAI" in body.name:
 		body.damage(30)
 	
 		
 	 
-		body.damage(30)
+		
 	queue_free()
 
 

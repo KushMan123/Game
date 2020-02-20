@@ -1,10 +1,10 @@
-extends ENEMY
+extends KinematicBody2D
 onready var timer=$Timer
 onready var enemy=$AnimatedSprite
 
 
 export var damage=15
-export var enemey_speed=200
+export var enemey_speed=350
 export var attack_distance=50
 export var min_move_distance=30.00
 
@@ -20,7 +20,7 @@ func _physics_process(delta):
 	if distance_to_player >= min_move_distance:
 		move_and_collide(direction* enemey_speed*delta)
 	if timer.is_stopped() and distance_to_player <= attack_distance:
-		player.damage(damage)
+		#player.damage(damage)
 		timer.start(20000000)
 	
 func _on_Area2D_body_entered(body):
@@ -29,3 +29,11 @@ func _on_Area2D_body_entered(body):
 	player=body
 	set_physics_process(true)
 		 
+
+
+func _on_Area2D_body_exited(body):
+	if body is Player:
+		set_physics_process(false)
+
+		
+	

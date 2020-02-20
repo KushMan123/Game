@@ -13,8 +13,13 @@ func _ready() -> void:
 	screensize = get_viewport_rect()
 	print(screensize)
 	print(get_position())
+<<<<<<< HEAD
 	set_position(Vector2(screensize.size.x / 2, screensize.size.y + 320))
 	#ss.x / 2 - 400,ss.y / 2 -250
+=======
+	set_position(Vector2(screensize.size.x / 2-400, screensize.size.y / 2+250))
+	#set_position(Vector2(screensize.size.x / 2, screensize.size.y / 2+320))
+>>>>>>> fbe9cbd3b2c0e3fedebfa508e9ce1737787efaa7
 	print(get_position())
 
 func _on_Timer_timeout() -> void:

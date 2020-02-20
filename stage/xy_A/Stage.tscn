@@ -1,53 +1,71 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://stage/xy_A/Stage.gd" type="Script" id=1]
-[ext_resource path="res://XY_A_PowerUp/PowerUP.tscn" type="PackedScene" id=2]
-[ext_resource path="res://object/XY_A_doorAndKey/door.tscn" type="PackedScene" id=3]
-[ext_resource path="res://object/XY_A_doorAndKey/key.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Character/Enemy/Enemy_xy_A_FollowsU.tscn" type="PackedScene" id=5]
-[ext_resource path="res://XY_A_Tilest/tileset/ground.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Character/Player/Player_xy_1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Background_XY_A/background.png" type="Texture" id=8]
-[ext_resource path="res://Background_XY_A/foreground.png" type="Texture" id=9]
+[ext_resource path="res://XY_A_Tilest/tileset/ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://XY_A_PowerUp/PowerUP.tscn" type="PackedScene" id=3]
+[ext_resource path="res://object/XY_A_doorAndKey/door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://object/XY_A_doorAndKey/key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Background_XY_A/background.png" type="Texture" id=6]
+[ext_resource path="res://Character/Enemy/Enemy_xy_A_FollowsU.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Character/Player/Player_xy_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://XY_A_Tilest/tileset/ground.tres" type="TileSet" id=9]
+[ext_resource path="res://Character/Enemy/enemy_xy_A1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Character/Enemy/enemy_xy_A_Ray.tscn" type="PackedScene" id=11]
 
 [node name="Stage" type="Node2D"]
 position = Vector2( 2.63022, 0.847122 )
 script = ExtResource( 1 )
 
-[node name="PowerUP" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3509.58, 152.104 )
-
-[node name="door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2535.43, 320.498 )
-
-[node name="key" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1976.01, 350.534 )
+[node name="ground" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.545098, 0.270588, 0.164706, 1 )
+self_modulate = Color( 0.180392, 0.717647, 0.541176, 1 )
+position = Vector2( -539.256, -263.636 )
+cell_size = Vector2( 32, 32 )
+cell_tile_origin = 2
+tile_data = PoolIntArray( 1638441, 3, 0, 1703946, 7, 0, 1703954, 7, 0, 1703962, 7, 0, 1703970, 7, 0, 1703977, 3, 0, 1703978, 2, 0, 1703980, 6, 0, 1703981, 6, 0, 1703985, 6, 0, 1703986, 6, 0, 1703990, 6, 0, 1703991, 6, 0, 1703992, 6, 0, 1703993, 6, 0, 1703994, 6, 0, 1703995, 6, 0, 1703996, 6, 0, 1703997, 6, 0, 1703998, 6, 0, 1769482, 10, 0, 1769490, 10, 0, 1769498, 10, 0, 1769506, 10, 0, 1769513, 10, 0, 1769514, 10, 0, 1769515, 10, 0, 1769516, 10, 0, 1769517, 10, 0, 1769518, 10, 0, 1769526, 10, 0, 1769527, 10, 0, 1769528, 10, 0, 1769529, 10, 0, 1769530, 10, 0, 1769531, 10, 0, 1769532, 10, 0, 1769533, 10, 0, 1769534, 10, 0, 1769535, 10, 0, 1769536, 10, 0, 1769537, 10, 0, 1769538, 10, 0, 1769539, 10, 0, 1769546, -2147483643, 0, 2031690, -2147483643, 0, 2162765, 536870917, 0, 2162766, 536870917, 0, 2162770, 536870917, 0, 2162773, 536870917, 0, 2162776, 536870917, 0, 2162780, 536870917, 0, 2162784, 536870917, 0 )
 
 [node name="EnemyFollowsU" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2227.53, 738.858 )
+position = Vector2( 1769.53, 432.858 )
+[node name="PowerUP" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3509.58, 152.104 )
 
-[node name="ground" parent="." instance=ExtResource( 6 )]
-modulate = Color( 0.32549, 0.741176, 0.156863, 1 )
-self_modulate = Color( 0.356863, 0.933333, 0.0313726, 1 )
-tile_data = PoolIntArray( 589813, 10, 0, 589814, 10, 0, 589815, 10, 0, 589816, 10, 0, 589817, 10, 0, 589818, 10, 0, 589819, 10, 0, 589820, 10, 0, 589821, 10, 0, 589822, 10, 0, 589823, 10, 0, 524290, 10, 0, 524291, 10, 0, 524292, 10, 0, 524293, 10, 0, 524294, 10, 0, 524295, 10, 0, 524296, 10, 0, 524297, 10, 0, 524298, 10, 0, 524299, 10, 0, 524300, 10, 0, 524301, 10, 0, 524302, 10, 0, 524303, 10, 0, 524304, 10, 0, 524305, 10, 0, 524306, 10, 0, 524307, 10, 0, 524308, 10, 0, 524309, 10, 0, 524310, 10, 0, 524311, 10, 0, 524312, 10, 0, 524313, 10, 0, 524314, 10, 0, 524315, 10, 0, 524316, 10, 0, 524317, 10, 0, 524318, 10, 0, 524319, 10, 0, 524320, 10, 0, 524321, 10, 0, 524322, 10, 0, 524323, 10, 0, 524324, 10, 0, 524325, 10, 0, 524326, 10, 0, 524327, 10, 0, 524328, 10, 0, 524329, 10, 0, 655349, 10, 0, 655350, 10, 0, 655351, 10, 0, 655352, 10, 0, 655353, 10, 0, 655354, 10, 0, 655355, 10, 0, 655356, 10, 0, 655357, 10, 0, 655358, 10, 0, 655359, 10, 0, 589824, 10, 0, 589827, 10, 0, 589828, 10, 0, 589829, 10, 0, 589830, 10, 0, 589831, 10, 0, 589832, 10, 0, 589833, 10, 0, 589834, 10, 0, 589835, 10, 0, 589836, 10, 0, 589837, 10, 0, 589838, 10, 0, 589839, 10, 0, 589840, 10, 0, 589841, 10, 0, 589842, 10, 0, 589843, 10, 0, 589844, 10, 0, 589845, 10, 0, 589846, 10, 0, 589847, 10, 0, 589848, 10, 0, 589849, 10, 0, 589850, 10, 0, 589851, 10, 0, 589852, 10, 0, 589853, 10, 0, 589854, 10, 0, 589855, 10, 0, 589856, 10, 0, 589857, 10, 0, 589858, 10, 0, 589859, 10, 0, 589860, 10, 0, 589861, 10, 0, 589862, 10, 0, 589863, 10, 0, 589864, 10, 0, 720885, 10, 0, 720887, 10, 0, 720888, 10, 0, 720889, 10, 0, 720890, 10, 0, 720891, 10, 0, 720892, 10, 0, 720893, 10, 0, 720894, 10, 0, 720895, 10, 0, 655360, 10, 0, 655361, 10, 0, 655362, 10, 0, 655363, 10, 0, 655364, 10, 0, 655365, 10, 0, 655368, 10, 0, 655369, 10, 0, 655370, 10, 0, 655371, 10, 0, 655372, 10, 0, 655373, 10, 0, 655374, 10, 0, 655375, 10, 0, 655376, 10, 0, 655377, 10, 0, 655378, 10, 0, 655380, 10, 0, 655381, 10, 0, 655382, 10, 0, 655383, 10, 0, 655384, 10, 0, 655385, 10, 0, 655386, 10, 0, 655387, 10, 0, 655388, 10, 0, 655389, 10, 0, 655390, 10, 0, 655391, 10, 0, 655392, 10, 0, 655393, 10, 0 )
+[node name="door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 662.771, 418.555 )
 
-[node name="Player_xy_1" parent="." instance=ExtResource( 7 )]
+[node name="key" parent="." instance=ExtResource( 5 )]
+position = Vector2( -193.214, 474.9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2, 0 )
+motion_mirroring = Vector2( 2048, 850 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 416.048, 181.468 )
-texture = ExtResource( 8 )
+modulate = Color( 0.0784314, 0.654902, 0.933333, 1 )
+self_modulate = Color( 0.941176, 0.847059, 0.847059, 1 )
+position = Vector2( 679.917, 461.797 )
+texture = ExtResource( 6 )
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+[node name="EnemyFollowsU" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2094.75, -168.477 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="Player_xy_1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1896.55, 867.282 )
+scale = Vector2( 2.5, 2.5 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2( 423.449, 180.716 )
-texture = ExtResource( 9 )
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, 2.39163 )
+tile_set = ExtResource( 9 )
+format = 1
+tile_data = PoolIntArray( 655356, 1, 0, 655357, 3, 0, 655359, 3, 0, 589825, 3, 0, 589827, 3, 0, 589829, 3, 0, 589831, 3, 0, 589833, 3, 0, 589834, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0 )
+
+[node name="enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1100.6, 594.599 )
+speed = 150
+size = Vector2( 5, 5 )
+
+[node name="enemyRay" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2154.06, 662.833 )
 [connection signal="In_door_area" from="door" to="." method="_on_door_In_door_area"]
 [connection signal="key_found" from="key" to="." method="_on_key_key_found"]
