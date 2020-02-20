@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://stage/xz/main.gd" type="Script" id=1]
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Areas/town area.gd" type="Script" id=13]
 [ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=16]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
@@ -139,7 +140,6 @@ format = 1
 tile_data = PoolIntArray( 720963, 29, 0, 786475, 29, 0, 786490, 29, 0, 852031, 29, 0, 917556, 29, 0, 1048622, 29, 0, 1048641, 29, 0, 1179706, 29, 0, 1245234, 29, 0, 1245248, 29, 0, 1376311, 29, 0, 1441836, 29, 0, 1441840, 29, 0, 1507390, 29, 0, 1638467, 29, 0, 1900611, 29, 0, 2162754, 29, 0, 2359364, 29, 0, 2621508, 29, 0, 2752577, 29, 0 )
 
 [node name="Charcter_collection" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Character_1" parent="Charcter_collection" instance=ExtResource( 5 )]
 position = Vector2( 1258.01, 617.571 )
@@ -154,11 +154,10 @@ position = Vector2( 1059.96, 887.408 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Character_4" parent="Charcter_collection" instance=ExtResource( 8 )]
-position = Vector2( 3236.49, 5141.82 )
+position = Vector2( 3226.58, 5087.93 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Event_item_collection" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Obstacle 1" type="KinematicBody2D" parent="Event_item_collection"]
 position = Vector2( 1958.54, 437.802 )
@@ -323,7 +322,6 @@ shape = SubResource( 2 )
 [node name="Spawning_area_collection" type="Node2D" parent="."]
 
 [node name="Area_1" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 5834.82, 2342.47 )
 collision_layer = 512
 script = ExtResource( 11 )
@@ -363,7 +361,6 @@ visible = false
 position = Vector2( 6299.63, 1848.05 )
 
 [node name="Area_2" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 6230.22, 770.905 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -397,7 +394,6 @@ visible = false
 position = Vector2( 6766.52, 952.758 )
 
 [node name="Area_3" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 7471.85, 2942.44 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -431,7 +427,6 @@ visible = false
 position = Vector2( 7682.59, 2671.59 )
 
 [node name="Area_4" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 7752.22, 1320.81 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -461,7 +456,6 @@ visible = false
 position = Vector2( 7935.87, 1452.58 )
 
 [node name="Area_5" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 7763.48, -441.701 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -495,7 +489,6 @@ visible = false
 position = Vector2( 7475.8, -320.099 )
 
 [node name="Area_6" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 7091.85, -440.322 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -529,7 +522,6 @@ visible = false
 position = Vector2( 7175.99, -338.645 )
 
 [node name="Area_7" type="Area2D" parent="Spawning_area_collection"]
-editor/display_folded = true
 position = Vector2( 6294.68, -1061.52 )
 script = ExtResource( 11 )
 __meta__ = {
@@ -573,7 +565,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 785.252, 511.799 )
+position = Vector2( 7180.48, -1077.26 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -606,6 +598,16 @@ shape = SubResource( 13 )
 [node name="Node2D" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3641.67, -1992.43 )
 scale = Vector2( 2, 2 )
+
+[node name="waterfall" type="Node2D" parent="."]
+position = Vector2( 6661.63, -1433.98 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="waterfall"]
+position = Vector2( -431.412, 0 )
+stream = ExtResource( 16 )
 [connection signal="body_entered" from="Spawning_area_collection/Area_1" to="Spawning_area_collection/Area_1" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning_area_collection/Area_1" to="." method="_on_Area2D_player_entered"]
 [connection signal="shoot" from="Spawning_area_collection/Area_1/Enemy_Collection/EnemyFollowsU" to="." method="_on_shoot"]

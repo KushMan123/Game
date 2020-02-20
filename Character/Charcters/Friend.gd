@@ -6,7 +6,6 @@ func _ready() -> void:
 	$AnimatedSprite.play("ideal")
 
 func _process(delta: float) -> void:
-	#_dialogs()
 	pass
 	
 func _dialogs():
