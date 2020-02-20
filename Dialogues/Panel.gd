@@ -14,6 +14,7 @@ func _ready() -> void:
 	print(screensize)
 	print(get_position())
 	set_position(Vector2(screensize.size.x / 2, screensize.size.y + 320))
+	#ss.x / 2 - 400,ss.y / 2 -250
 	print(get_position())
 
 func _on_Timer_timeout() -> void:
