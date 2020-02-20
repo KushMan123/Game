@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Character/Player_abstract.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Character/Player_xy_1.gd" type="Script" id=2]
-[ext_resource path="res://Character/player animation_xy_1.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Character/Player/Player_abstract.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Character/Player/Player_xy_1.gd" type="Script" id=2]
+[ext_resource path="res://Character/Player/player animation_xy_1.tres" type="SpriteFrames" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -15,11 +15,15 @@ position = Vector2( 21.235, -13.441 )
 scale = Vector2( 0.021, 0.021 )
 frames = ExtResource( 3 )
 animation = "attack"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 21.235, -5.441 )
 shape = SubResource( 1 )
+
+[node name="Camera2D" parent="." index="2"]
+current = true
 
 [node name="HealthBar" type="TextureProgress" parent="." index="4"]
 margin_left = -1.02344
