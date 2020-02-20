@@ -10,9 +10,11 @@ var screensize
 
 
 func _ready() -> void:
-	#self.rect_position.x = screensize.x / 2
-	#self.rect_position.y = screensize.y / 4
-	pass
+	screensize = get_viewport_rect()
+	print(screensize)
+	print(get_position())
+	set_position(Vector2(screensize.size.x / 2, screensize.size.y + 320))
+	print(get_position())
 
 func _on_Timer_timeout() -> void:
 	$Text.set_visible_characters($Text.get_visible_characters() + 1)

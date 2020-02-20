@@ -12,7 +12,9 @@ var audio
 onready var spawned=false
 
 func _ready() -> void:
+	$waterfall/AudioStreamPlayer2D.play()
 	audio = AudioStreamPlayer2D.new()
+	self.add_child(audio)
 	set_process(true)
 	set_camera_limits()
 
@@ -22,6 +24,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Z_button"):
 			print("z button pressed")
 			audio.stream = load("res://Audio and sound effects/select_sound.wav")
+			audio.set_volume_db(10)
+			audio.max_distance = 20000
 			audio.play()
 			var index=int(global.area_entered_name[-1])
 			Character_collection.get_child(index-1)._dialogs()

@@ -203,7 +203,7 @@ func _on_Area2D_area_entered(area):
 		walking.stream = load('res://Audio and sound effects/forest_walking.wav')
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
-		music.play()
+		#music.play()
 	elif area.name == 'wizard_place':
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
