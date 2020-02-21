@@ -9,19 +9,19 @@
 [ext_resource path="res://assets/xy/player_xy_A/running 1.png" type="Texture" id=7]
 [ext_resource path="res://assets/xy/player_xy_A/running 2.png" type="Texture" id=8]
 [ext_resource path="res://assets/xy/player_xy_A/running 3.png" type="Texture" id=9]
-[ext_resource path="res://assets/xy/player_xy_A/jumping 4.png" type="Texture" id=10]
-[ext_resource path="res://assets/xy/player_xy_A/jumping 5.png" type="Texture" id=11]
-[ext_resource path="res://assets/xy/player_xy_A/running 4.png" type="Texture" id=12]
-[ext_resource path="res://assets/xy/player_xy_A/running 5.png" type="Texture" id=13]
-[ext_resource path="res://assets/xy/player_xy_A/running 6.png" type="Texture" id=14]
-[ext_resource path="res://assets/xy/player_xy_A/running 8.png" type="Texture" id=15]
-[ext_resource path="res://assets/xy/player_xy_A/running 7.png" type="Texture" id=16]
-[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 1.png" type="Texture" id=17]
-[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 2.png" type="Texture" id=18]
-[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 3.png" type="Texture" id=19]
-[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 4.png" type="Texture" id=20]
-[ext_resource path="res://assets/xy/player_xy_A/jumping 1.png" type="Texture" id=21]
-[ext_resource path="res://assets/xy/player_xy_A/jumping 2.png" type="Texture" id=22]
+[ext_resource path="res://assets/xy/player_xy_A/jumping 1.png" type="Texture" id=10]
+[ext_resource path="res://assets/xy/player_xy_A/jumping 2.png" type="Texture" id=11]
+[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 1.png" type="Texture" id=12]
+[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 2.png" type="Texture" id=13]
+[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 3.png" type="Texture" id=14]
+[ext_resource path="res://assets/xy/player_xy_A/ideal shoot 4.png" type="Texture" id=15]
+[ext_resource path="res://assets/xy/player_xy_A/running 4.png" type="Texture" id=16]
+[ext_resource path="res://assets/xy/player_xy_A/running 5.png" type="Texture" id=17]
+[ext_resource path="res://assets/xy/player_xy_A/running 6.png" type="Texture" id=18]
+[ext_resource path="res://assets/xy/player_xy_A/running 8.png" type="Texture" id=19]
+[ext_resource path="res://assets/xy/player_xy_A/running 7.png" type="Texture" id=20]
+[ext_resource path="res://assets/xy/player_xy_A/jumping 4.png" type="Texture" id=21]
+[ext_resource path="res://assets/xy/player_xy_A/jumping 5.png" type="Texture" id=22]
 
 [resource]
 animations = [ {
@@ -42,21 +42,21 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "fall",
+"name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "run",
-"speed": 1.2
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "attack",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "jump",
+"name": "fall",
 "speed": 5.0
 } ]

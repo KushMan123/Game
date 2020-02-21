@@ -2,15 +2,15 @@
 
 [ext_resource path="res://stage/xy_A/Stage.gd" type="Script" id=1]
 [ext_resource path="res://XY_A_Tilest/tileset/ground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://XY_A_PowerUp/PowerUP.tscn" type="PackedScene" id=3]
-[ext_resource path="res://object/XY_A_doorAndKey/door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://object/XY_A_doorAndKey/key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://object/XY_A_doorAndKey/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://XY_A_PowerUp/PowerUP.tscn" type="PackedScene" id=4]
+[ext_resource path="res://object/XY_A_doorAndKey/door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Background_XY_A/background.png" type="Texture" id=6]
 [ext_resource path="res://Character/Enemy/Enemy_xy_A_FollowsU.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Character/Player/Player_xy_1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://XY_A_Tilest/tileset/ground.tres" type="TileSet" id=9]
-[ext_resource path="res://Character/Enemy/enemy_xy_A1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Character/Enemy/enemy_xy_A_Ray.tscn" type="PackedScene" id=11]
+[ext_resource path="res://XY_A_Tilest/tileset/ground.tres" type="TileSet" id=8]
+[ext_resource path="res://Character/Enemy/enemy_xy_A1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Character/Enemy/enemy_xy_A_Ray.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Character/Player/Player_xy_1.tscn" type="PackedScene" id=11]
 
 [node name="Stage" type="Node2D"]
 position = Vector2( 2.63022, 0.847122 )
@@ -24,15 +24,16 @@ cell_size = Vector2( 32, 32 )
 cell_tile_origin = 2
 tile_data = PoolIntArray( 1638441, 3, 0, 1703946, 7, 0, 1703954, 7, 0, 1703962, 7, 0, 1703970, 7, 0, 1703977, 3, 0, 1703978, 2, 0, 1703980, 6, 0, 1703981, 6, 0, 1703985, 6, 0, 1703986, 6, 0, 1703990, 6, 0, 1703991, 6, 0, 1703992, 6, 0, 1703993, 6, 0, 1703994, 6, 0, 1703995, 6, 0, 1703996, 6, 0, 1703997, 6, 0, 1703998, 6, 0, 1769482, 10, 0, 1769490, 10, 0, 1769498, 10, 0, 1769506, 10, 0, 1769513, 10, 0, 1769514, 10, 0, 1769515, 10, 0, 1769516, 10, 0, 1769517, 10, 0, 1769518, 10, 0, 1769526, 10, 0, 1769527, 10, 0, 1769528, 10, 0, 1769529, 10, 0, 1769530, 10, 0, 1769531, 10, 0, 1769532, 10, 0, 1769533, 10, 0, 1769534, 10, 0, 1769535, 10, 0, 1769536, 10, 0, 1769537, 10, 0, 1769538, 10, 0, 1769539, 10, 0, 1769546, -2147483643, 0, 2031690, -2147483643, 0, 2162765, 536870917, 0, 2162766, 536870917, 0, 2162770, 536870917, 0, 2162773, 536870917, 0, 2162776, 536870917, 0, 2162780, 536870917, 0, 2162784, 536870917, 0 )
 
-[node name="EnemyFollowsU" parent="." instance=ExtResource( 5 )]
+[node name="EnemyFollowsU" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1769.53, 432.858 )
-[node name="PowerUP" parent="." instance=ExtResource( 3 )]
+
+[node name="PowerUP" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3509.58, 152.104 )
 
-[node name="door" parent="." instance=ExtResource( 4 )]
+[node name="door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 662.771, 418.555 )
 
-[node name="key" parent="." instance=ExtResource( 5 )]
+[node name="key" parent="." instance=ExtResource( 3 )]
 position = Vector2( -193.214, 474.9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -50,22 +51,20 @@ texture = ExtResource( 6 )
 [node name="EnemyFollowsU" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2094.75, -168.477 )
 
-[node name="Player_xy_1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1896.55, 867.282 )
-scale = Vector2( 2.5, 2.5 )
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 2.39163 )
-tile_set = ExtResource( 9 )
+tile_set = ExtResource( 8 )
 format = 1
 tile_data = PoolIntArray( 655356, 1, 0, 655357, 3, 0, 655359, 3, 0, 589825, 3, 0, 589827, 3, 0, 589829, 3, 0, 589831, 3, 0, 589833, 3, 0, 589834, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 589847, 3, 0, 589849, 3, 0, 589850, 3, 0, 589851, 3, 0 )
 
-[node name="enemy" parent="." instance=ExtResource( 10 )]
+[node name="enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 783.262, 581.238 )
 speed = 150
 size = Vector2( 5, 5 )
 
-[node name="enemyRay" parent="." instance=ExtResource( 11 )]
+[node name="enemyRay" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2170.76, 647.801 )
+
+[node name="Player_xy_1" parent="." instance=ExtResource( 11 )]
 [connection signal="In_door_area" from="door" to="." method="_on_door_In_door_area"]
 [connection signal="key_found" from="key" to="." method="_on_key_key_found"]

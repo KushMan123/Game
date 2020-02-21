@@ -5,7 +5,7 @@ var key_found=false
 func _ready():
 	pass
 func _physics_process(delta):
-	var  pos=Player.position
+	var  pos = Player.position
 
 	if Player.position.y>1000:
 
