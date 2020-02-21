@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/running 3.png-3b74c43413dab01ce063b63a70ea4bb2.stex"
+path="res://.import/fill.png-3cdcd2e739a4c7b150343905b58157b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/xy/player_xy_A/running 3.png"
-dest_files=[ "res://.import/running 3.png-3b74c43413dab01ce063b63a70ea4bb2.stex" ]
+source_file="res://HP_bar/fill.png"
+dest_files=[ "res://.import/fill.png-3cdcd2e739a4c7b150343905b58157b8.stex" ]
 
 [params]
 
@@ -21,8 +21,8 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
-flags/anisotropic=true
+flags/mipmaps=false
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

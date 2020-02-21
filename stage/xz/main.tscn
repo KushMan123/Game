@@ -14,7 +14,7 @@
 [ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Areas/town area.gd" type="Script" id=13]
 [ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Cave1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://cave/Cave1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=17]
 [ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=18]
@@ -614,7 +614,7 @@ tile_data = PoolIntArray( -1900489, 29, 0, -1769467, 29, 0, -1769466, 29, 0, -17
 position = Vector2( 2220.24, 1655.27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/village"]
-position = Vector2( 70.3943, 30.1689 )
+position = Vector2( 12.793, -34.6326 )
 shape = SubResource( 11 )
 
 [node name="forest" type="Area2D" parent="sound_area"]
