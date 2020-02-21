@@ -1,9 +1,12 @@
 extends Node2D
 
 onready var Player=get_node("Player_xy_1")
+onready var bgmusic = $Player_xy_1/AudioStreamPlayer2D
 var key_found=false
+
 func _ready():
 	pass
+
 func _physics_process(delta):
 	var  pos=Player.position
 
