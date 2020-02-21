@@ -7,7 +7,7 @@
 extents = Vector2( 5.91572, 2.78535 )
 
 [node name="Moving platform" type="Node2D"]
-position = Vector2( 23.6836, 13.59 )
+position = Vector2( 513.609, 228.313 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

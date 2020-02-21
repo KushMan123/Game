@@ -7,12 +7,13 @@
 [ext_resource path="res://XY_2_scenes/Screenshake.gd" type="Script" id=5]
 [ext_resource path="res://XY_2_scenes/Water.tscn" type="PackedScene" id=6]
 [ext_resource path="res://XY_2_tilesets'/Stone_ dark.png" type="Texture" id=7]
-[ext_resource path="res://XY_2_scenes/static_rotating_trap.tscn" type="PackedScene" id=8]
+[ext_resource path="res://static_rotating_trap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://XY_2_scenes/Rotating platform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://XY_2_scenes/following_friend.tscn" type="PackedScene" id=10]
 [ext_resource path="res://XY_2_scenes/Moving platform.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Character/Player/Player_xy_2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://XY_2_tilesets'/grass.tres" type="TileSet" id=13]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10, 56, 9, 50, 10, 40, 10, 23, 14, 11, 18, 2, 51, 3, 68, 15, 65, 30, 65, 52, 65, 55 )

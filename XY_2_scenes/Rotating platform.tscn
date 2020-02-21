@@ -31,5 +31,6 @@ animation = "New Anim"
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.16956, -2.33911 )
 shape = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -2,7 +2,7 @@ extends  Player
 signal health_update(health)
 signal killed()
 const SPEED=350
-const GRAVITY=50
+const GRAVITY=10
 const JUMP_POWER =-550
 const FLOOR = Vector2(0,-1)
 

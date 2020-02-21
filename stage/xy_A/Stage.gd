@@ -8,14 +8,14 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	var  pos=Player.position
-
-	if Player.position.y>1000:
-
-
-		Player.dead()
-		Player.position=Vector2(0,500)
-
+#	var  pos=Player.position
+#
+#	if Player.position.y>1000:
+#
+#
+#		Player.dead()
+#		Player.position=Vector2(0,500)
+	pass
 
 		
 
