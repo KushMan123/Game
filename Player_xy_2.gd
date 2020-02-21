@@ -3,7 +3,7 @@ extends Player
 const SPEED = 300
 #onready var hp_bar = get_parent().get_node("ParallaxBackground").get_node("HPbar")
 var velocity = Vector2()
-var gravity = 0
+var gravity = 50
 const JUMP_SPEED = -900
 const FLOOR = Vector2(0,-1)
 var on_ground = false

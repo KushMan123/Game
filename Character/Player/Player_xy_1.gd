@@ -2,7 +2,7 @@ extends  Player
 signal health_update(health)
 signal killed()
 const SPEED=350
-const GRAVITY=10
+const GRAVITY=50
 const JUMP_POWER =-550
 const FLOOR = Vector2(0,-1)
 
@@ -45,7 +45,7 @@ func _physics_process(delta):
 				velocity.x=SPEED
 				if is_attacking==false:
 						
-					$AnimatedSprite.play("walk")
+					$AnimatedSprite.play("run")
 					$AnimatedSprite.flip_h=false
 					if sign($Position2D.position.x)== -1:
 						$Position2D.position.x *= (-1)
@@ -60,7 +60,7 @@ func _physics_process(delta):
 				if is_attacking==false:
 					
 					$AnimatedSprite.flip_h=true
-					$AnimatedSprite.play("walk")
+					$AnimatedSprite.play("run")
 					if sign($Position2D.position.x)== 1:	
 						$Position2D.position.x *= (-1)
 						
@@ -68,12 +68,12 @@ func _physics_process(delta):
 			is_walking=true
 			if is_attacking==false || is_on_floor()==false:
 				if sign($Position2D.position.x)== 1:
-					$AnimatedSprite.play("walk")
+					$AnimatedSprite.play("run")
 					velocity.x=SPEED*3
 					
 					
 				elif sign($Position2D.position.x)== -1:
-					$AnimatedSprite.play("walk")
+					$AnimatedSprite.play("run")
 					velocity.x=-SPEED*3
 					
 		else:
