@@ -30,9 +30,7 @@ func _physics_process(delta):
 	
 	if distance_to_player >= min_move_distance:
 		move_and_collide(direction* enemey_speed*delta)
-	if timer.is_stopped() and distance_to_player <= attack_distance:
-		player.damage(damage)
-		timer.start(20)
+
 	
 func _on_Area2D_body_entered(body):
 	if body is Player:

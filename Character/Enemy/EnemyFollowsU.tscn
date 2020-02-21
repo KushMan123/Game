@@ -41,11 +41,11 @@ health = 40
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 6.4105, 1.90196 )
-rotation = -5.47968e-010
+rotation = -5.47968e-10
 scale = Vector2( 0.159337, 0.159337 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Enemy" type="CollisionShape2D" parent="."]
@@ -54,7 +54,7 @@ shape = SubResource( 2 )
 [node name="firing direction" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, 0.131762 )
-rotation = -7.51433e-005
+rotation = -7.51433e-05
 scale = Vector2( 1, 0.411198 )
 texture = ExtResource( 13 )
 offset = Vector2( 20, 0 )

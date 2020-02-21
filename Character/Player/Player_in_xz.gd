@@ -183,6 +183,7 @@ func _on_Timer_timeout() -> void:
 
 func _on_Bullet_area_area_entered(area: Area2D) -> void:
 	if area is EnemyBullet:
+		print("Hit taken")
 		damage(area.damage)
 	pass
 
@@ -203,7 +204,7 @@ func _on_Area2D_area_entered(area):
 		walking.stream = load('res://Audio and sound effects/forest_walking.wav')
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
-		music.play()
+		#music.play()
 	elif area.name == 'wizard_place':
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
