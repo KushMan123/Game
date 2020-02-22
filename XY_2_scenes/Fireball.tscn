@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Fireball.gd" type="Script" id=1]
-[ext_resource path="res://art/coinGold.png" type="Texture" id=2]
-[ext_resource path="res://art/gemYellow.png" type="Texture" id=3]
-[ext_resource path="res://art/gemBlue.png" type="Texture" id=4]
+[ext_resource path="res://XY_2_scenes/Fireball.gd" type="Script" id=1]
+[ext_resource path="res://object/Bullets_HPBar_xy2/coinGold.png" type="Texture" id=2]
+[ext_resource path="res://object/Bullets_HPBar_xy2/gemYellow.png" type="Texture" id=3]
+[ext_resource path="res://object/Bullets_HPBar_xy2/gemBlue.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -34,6 +34,8 @@ __meta__ = {
 [node name="bullet_AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "fireball"
+frame = 1
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

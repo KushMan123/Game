@@ -1,7 +1,7 @@
 extends Player
 
 const SPEED = 300
-#onready var hp_bar = get_parent().get_node("ParallaxBackground").get_node("HPbar")
+onready var hp_bar = get_parent().get_node("ParallaxBackground2//HPbar")
 var velocity = Vector2()
 var gravity = 50
 const JUMP_SPEED = -900
@@ -15,7 +15,7 @@ var percentage_hp
 var is_dead = false
 var is_sinking = false
 
-#const FIREBALL = preload("res://Fireball.tscn")
+const FIREBALL = preload("res://XY_2_scenes/Fireball.tscn")
 
 
 func _ready():
@@ -25,20 +25,20 @@ func dead():
 	#HP bar code:
 	current_hp -= 20
 	percentage_hp = int(float(current_hp) / (max_hp) * 100)
-#	get_parent().get_node("ParallaxBackground/HPbar/Tween_hp").interpolate_property(hp_bar, 'value', hp_bar.value, percentage_hp, 0.1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-#	get_parent().get_node("ParallaxBackground/HPbar/Tween_hp").start()
-#	if percentage_hp > 40:
-#		hp_bar.set_tint_progress("fadf69")
-#	elif hp_bar.value <= 40:
-#		hp_bar.set_tint_progress("e41616")
-#
+	get_parent().get_node("ParallaxBackground2/HPbar/Tween_hp").interpolate_property(hp_bar, 'value', hp_bar.value, percentage_hp, 0.1,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	get_parent().get_node("ParallaxBackground2/HPbar/Tween_hp").start()
+	if percentage_hp > 40:
+		hp_bar.set_tint_progress("fadf69")
+	elif hp_bar.value <= 40:
+		hp_bar.set_tint_progress("e41616")
+
 	
 	#Death code:
 	if current_hp <= 0:
 		is_dead = true
 		velocity = Vector2(0,0)
 		$AnimatedSprite.play("dead1")
-		$Collision.call_deferred("set_disabled", true)
+		$CollisionShape2D.call_deferred("set_disabled", true)
 		$Timer.start()
 
 ##func sink():
@@ -73,26 +73,26 @@ func _physics_process(delta):
 				velocity.y = JUMP_SPEED
 				on_ground = false
 		
-#		if Input.is_action_just_pressed("ui_focus_next"):
-#			if velocity == Vector2(0,0):
-##				$AnimatedSprite.play("idle_shoot")
-#				var fireball = FIREBALL.instance()
-#				if sign($Position2D.position.x)==1:
-#						fireball.set_fireball_direction(1)
-#				else:
-#						fireball.set_fireball_direction(-1)
-#				get_parent().add_child(fireball)
-#				fireball.position = $Position2D.global_position
-#			else:
-##				$AnimatedSprite.play("run_shoot")
-#				var fireball = FIREBALL.instance()
-#				if sign($Position2D.position.x)==1:
-#						fireball.set_fireball_direction(1)
-#				else:
-#						fireball.set_fireball_direction(-1)
-#				get_parent().add_child(fireball)
-#				fireball.position = $Position2D.global_position
-		
+		if Input.is_action_just_pressed("ui_focus_next"):
+			if velocity == Vector2(0,0):
+#				$AnimatedSprite.play("idle_shoot")
+				var fireball = FIREBALL.instance()
+				if sign($Position2D.position.x)==1:
+						fireball.set_fireball_direction(1)
+				else:
+						fireball.set_fireball_direction(-1)
+				get_parent().add_child(fireball)
+				fireball.position = $Position2D.global_position
+			else:
+#				$AnimatedSprite.play("run_shoot")
+				var fireball = FIREBALL.instance()
+				if sign($Position2D.position.x)==1:
+						fireball.set_fireball_direction(1)
+				else:
+						fireball.set_fireball_direction(-1)
+				get_parent().add_child(fireball)
+				fireball.position = $Position2D.global_position
+
 		velocity.y += gravity
 	
 		if is_on_floor(): 
@@ -108,10 +108,10 @@ func _physics_process(delta):
 		
 		if get_slide_count() > 0:
 			for i in range(get_slide_count()):
-				if "enemy" in get_slide_collision(i).collider.name || "Water" in get_slide_collision(i).collider.name|| "static_rotating_trap" in get_slide_collision(i).collider.name || "Plants" in get_slide_collision(i).collider.name:
+				if "enemy" in get_slide_collision(i).collider.name || "Water_xy_2" in get_slide_collision(i).collider.name|| "static_rotating_trap" in get_slide_collision(i).collider.name || "Plants_xy_2" in get_slide_collision(i).collider.name:
 					dead()
 
-#func _on_Timer_timeout():
-#	get_tree().change_scene("main.tscn")
+func _on_Timer_timeout():
+	get_tree().change_scene("xy_2_main.tscn")
 
 

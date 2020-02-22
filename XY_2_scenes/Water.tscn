@@ -16,7 +16,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 79.7319, 27.6897 )
 
-[node name="Water" type="KinematicBody2D"]
+[node name="Water_xy_2" type="KinematicBody2D"]
 scale = Vector2( 1, 2 )
 collision_layer = 16
 collision_mask = 5
@@ -25,8 +25,8 @@ collision_mask = 5
 scale = Vector2( 1, 0.293617 )
 frames = SubResource( 1 )
 animation = "water_anim"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+disabled = true

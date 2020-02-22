@@ -144,6 +144,8 @@ global="*res://Global script/global.gd"
 
 [display]
 
+window/size/width=800
+window/size/height=400
 window/size/fullscreen=true
 
 [input]
