@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	if is_rotating:
-		body_rotation=body_rotation  + 5
+		body_rotation=body_rotation  + 1
 		set_rotation_degrees(body_rotation)
 #		if body_rotation-initial_body_rotation==180:
 #			initial_body_rotation=body_rotation

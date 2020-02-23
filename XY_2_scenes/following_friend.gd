@@ -4,7 +4,7 @@ onready var player = get_parent().get_node("player")
 onready var friend = $AnimatedSprite
 
 var GRAVITY = 50
-export var friend_speed = 50
+export var friend_speed = 100
 var velocity = Vector2()
 export var min_move_distance = 10
 

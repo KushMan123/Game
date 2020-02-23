@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/xy/layers_xy_2/background_image_project.png" type="Texture" id=1]
 [ext_resource path="res://assets/xy/layers_xy_2/foregorund_image.png" type="Texture" id=2]
@@ -10,13 +10,15 @@
 [ext_resource path="res://XY_2_scenes/Water.tscn" type="PackedScene" id=8]
 [ext_resource path="res://stage/xy_2/Stone_xy_2t.tres" type="TileSet" id=9]
 [ext_resource path="res://static_rotating_trap.tscn" type="PackedScene" id=10]
-[ext_resource path="res://XY_2_scenes/Rotating platform.tscn" type="PackedScene" id=11]
-[ext_resource path="res://XY_2_scenes/following_friend.tscn" type="PackedScene" id=12]
-[ext_resource path="res://XY_2_scenes/Moving platform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://XY_2_scenes/following_friend.tscn" type="PackedScene" id=11]
+[ext_resource path="res://XY_2_scenes/Moving platform.tscn" type="PackedScene" id=12]
+[ext_resource path="res://stage/xy_2/horror_trees_xy_2.tres" type="TileSet" id=13]
 [ext_resource path="res://stage/xy_2/StonePlatfrom_xy_2.tres" type="TileSet" id=14]
 [ext_resource path="res://XY_2_tilesets'/grass.tres" type="TileSet" id=15]
 [ext_resource path="res://stage/xy_2/xy_2_main.tres" type="TileSet" id=16]
-[ext_resource path="res://Character/Player/Player_xy_2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://XY_2_scenes/Rotating platform.tscn" type="PackedScene" id=17]
+[ext_resource path="res://stage/xy_2/WaterII_xy_2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Character/Player/Player_xy_2.tscn" type="PackedScene" id=19]
 
 [node name="xy_2_main" type="Node2D"]
 
@@ -39,7 +41,7 @@ motion_mirroring = Vector2( 1860, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer2"]
 position = Vector2( 965.718, 439.292 )
-scale = Vector2( 0.525281, 0.5024 )
+scale = Vector2( 0.525, 0.525 )
 texture = ExtResource( 2 )
 
 [node name="HPbar" type="TextureProgress" parent="ParallaxBackground2"]
@@ -68,7 +70,7 @@ script = ExtResource( 7 )
 [node name="Tween" type="Tween" parent="Screenshake"]
 
 [node name="Water_xy_2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1685.57, 486.924 )
+position = Vector2( 2948.18, 172.738 )
 scale = Vector2( 0.5, 4 )
 
 [node name="Stone_xy_2" type="TileMap" parent="."]
@@ -82,8 +84,7 @@ format = 1
 position = Vector2( 1533.15, 213.956 )
 
 [node name="static_rotating_trap2" parent="Trap_collection" instance=ExtResource( 10 )]
-position = Vector2( 948.993, 265.913 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 4427.07, 734.256 )
 
 [node name="static_rotating_trap3" parent="Trap_collection" instance=ExtResource( 10 )]
 position = Vector2( 1172.52, 247.825 )
@@ -93,37 +94,51 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 1325.54, 253.749 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1806.58, 70.4902 )
-
-[node name="following_friend" parent="." instance=ExtResource( 12 )]
+[node name="following_friend" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2378.93, 245.22 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Moving platform" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1881.1, 262.173 )
+[node name="Moving platform" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2571.14, 764.284 )
 scale = Vector2( 4, 3 )
+move_to = Vector2( 250, 0 )
+
+[node name="Horror_trees_xy_2" type="TileMap" parent="."]
+scale = Vector2( 1.5, 1.5 )
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 35, 35 )
+format = 1
+tile_data = PoolIntArray( 786518, 0, 0, 786520, 4, 0, 1179697, 1, 0 )
 
 [node name="StonePlatform_xy_2" type="TileMap" parent="."]
 tile_set = ExtResource( 14 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 1835008, 0, 0, 1835024, 0, 0, 1835040, 0, 0, 1835056, 0, 0, 1835072, 0, 0, 1900544, 1, 0, 1900559, 1, 0, 1900573, 1, 0, 1900589, 1, 0, 1900604, 1, 0, 1900608, 1, 0, 1966080, 1, 0, 1966095, 1, 0, 1966110, 1, 0, 1966125, 1, 0, 1966140, 1, 0, 1966144, 1, 0, 2031616, 0, 0, 2031632, 0, 0, 2031648, 0, 0, 2031664, 0, 0, 2031680, 0, 0, 2097152, 1, 0, 2097168, 1, 0, 2097183, 1, 0, 2097198, 1, 0, 2097213, 1, 0, 2097216, 1, 0 )
+tile_data = PoolIntArray( 1835008, 0, 0, 1835024, 0, 0, 1835040, 0, 0, 1835056, 0, 0, 1835072, 0, 0, 1835120, 0, 0, 1835136, 0, 0, 1835152, 0, 0, 1835168, 0, 0, 1900544, 1, 0, 1900559, 1, 0, 1900573, 1, 0, 1900589, 1, 0, 1900604, 1, 0, 1900608, 1, 0, 1900656, 1, 0, 1900671, 1, 0, 1900687, 1, 0, 1900703, 1, 0, 1966080, 1, 0, 1966095, 1, 0, 1966110, 1, 0, 1966125, 1, 0, 1966140, 1, 0, 1966144, 1, 0, 1966192, 1, 0, 1966207, 1, 0, 1966223, 1, 0, 1966239, 1, 0, 1966240, 1, 0, 2031616, 0, 0, 2031632, 0, 0, 2031648, 0, 0, 2031664, 0, 0, 2031680, 0, 0, 2031728, 1, 0, 2031744, 0, 0, 2031760, 0, 0, 2031776, 0, 0, 2097152, 1, 0, 2097168, 1, 0, 2097183, 1, 0, 2097198, 1, 0, 2097213, 1, 0, 2097216, 1, 0, 2097264, 0, 0, 2097280, 1, 0, 2097295, 1, 0, 2097310, 1, 0, 2097312, 1, 0 )
 
 [node name="grass_xy_2" type="TileMap" parent="."]
 tile_set = ExtResource( 15 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196608, 0, 0, 1769472, 1, 0, 1769474, 2, 0, 1769486, 2, 0, 1769498, 2, 0, 1769510, 2, 0, 1769522, 2, 0, 1769534, 2, 0, 1769539, 2, 0, 1769551, 3, 0 )
+tile_data = PoolIntArray( 196608, 0, 0, 1310850, 1, 0, 1310852, 4, 0, 1310854, 3, 0, 1507449, 1, 0, 1507451, 4, 0, 1507453, 5, 0, 1507455, 3, 0, 1573059, 1, 0, 1573060, 4, 0, 1573062, 5, 0, 1573064, 4, 0, 1573066, 3, 0, 1769472, 1, 0, 1769474, 2, 0, 1769486, 2, 0, 1769498, 2, 0, 1769510, 2, 0, 1769522, 2, 0, 1769534, 2, 0, 1769539, 2, 0, 1769551, 3, 0, 1769583, 1, 0, 1769585, 2, 0, 1769587, 2, 0, 1769599, 2, 0, 1769611, 2, 0, 1769623, 2, 0, 1769635, 2, 0, 1769647, 3, 0 )
 
 [node name="Plants_xy_2" type="TileMap" parent="."]
 modulate = Color( 0.996078, 0.988235, 0.988235, 1 )
 tile_set = ExtResource( 16 )
-cell_size = Vector2( 32, 32 )
+cell_size = Vector2( 30, 30 )
 format = 1
-tile_data = PoolIntArray( 1703950, 0, 0 )
+tile_data = PoolIntArray( 1310779, 24, 0, 1310860, 7, 0, 1376319, 22, 0, 1441855, 22, 0, 1507458, 5, 0, 1507460, 6, 0, 1703950, 10, 0, 1704097, 20, 0, 1769487, 11, 0, 1769502, 12, 0, 1769504, 17, 0, 1769511, 2, 0, 1769594, 8, 0, 1769631, 12, 0, 1769642, 3, 0, 1835146, 15, 0, 1835148, 15, 0, 1835151, 16, 0, 1835184, 14, 0, 1900716, 26, 0 )
 
-[node name="player" parent="." instance=ExtResource( 17 )]
-position = Vector2( 175.199, 264.531 )
+[node name="Rotating_platform" parent="." instance=ExtResource( 17 )]
+position = Vector2( 5992.31, 830.998 )
+
+[node name="Water_anim_II" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3072.22, 869.977 )
+
+[node name="Water_anim_II2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3072.22, 958.066 )
+
+[node name="player" parent="." instance=ExtResource( 19 )]
+position = Vector2( 500, 500 )
 scale = Vector2( 1.25, 1.25 )
 [connection signal="tween_completed" from="Screenshake/Tween" to="Screenshake" method="_on_Tween_tween_completed"]
