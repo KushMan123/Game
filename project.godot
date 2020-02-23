@@ -199,6 +199,16 @@ Z_button={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Character"
+2d_physics/layer_4="Traps"
+2d_physics/layer_6="Box"
+2d_physics/layer_7="Layout"
+2d_physics/layer_8="Bullet"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
