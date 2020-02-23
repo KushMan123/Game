@@ -21,7 +21,7 @@ func _physics_process(delta):
 
 	
 
-func _on_door_In_door_area(value1):
+func _on_door_In_door_area(value1:bool):
 
 	if value1==true:
 		if key_found==true:
@@ -40,3 +40,11 @@ func _on_key_key_found(value:bool):
 		key_found=true
 		print("inside key")
 		$key.queue_free()
+
+
+func _on_Treasurefound_treasure_found(value:bool):
+	if value==true:
+		$HiddenWall.set_visible(true)
+		$HiddenWall.set_collision_layer_bit(15,true)
+		$HiddenWall.set_collision_mask_bit(0,true)
+	
