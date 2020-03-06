@@ -55,6 +55,11 @@ _global_script_classes=[ {
 "path": "res://object/Game objects_xz/Magical_item.gd"
 }, {
 "base": "Node2D",
+"class": "Main_Scene_4",
+"language": "GDScript",
+"path": "res://stage/xz/scene_4.gd"
+}, {
+"base": "Node2D",
 "class": "Main_scene_1",
 "language": "GDScript",
 "path": "res://stage/xz/main.gd"
@@ -119,6 +124,7 @@ _global_script_class_icons={
 "EnemyBullet": "",
 "Event_Characters": "",
 "Magical_Items": "",
+"Main_Scene_4": "",
 "Main_scene_1": "",
 "Moving_square_trap": "",
 "PhysicBox": "",

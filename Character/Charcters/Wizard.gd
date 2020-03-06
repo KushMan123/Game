@@ -27,10 +27,10 @@ func _dialogs():
 		global.event_collection.remove("Event_1")
 		global.event_collection.append("Event_2")
 		print(global.event_collection)
-	print("character 4")
-	c= global.is_present(global.people_talked_collection,'Character_4')
+	print("Knight")
+	c= global.is_present(global.people_talked_collection,'Knight')
 	if not c:
-		global.people_talked_collection.append('Character_4')
+		global.people_talked_collection.append('Knight')
 
 
 
