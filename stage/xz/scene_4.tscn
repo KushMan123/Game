@@ -318,9 +318,11 @@ shape = SubResource( 4 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning area colection/Area2D6"]
 
 [node name="EnemyFollowsU" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 78.5107, 1998.07 )
 
 [node name="EnemyFollowsU2" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( -434.582, 1807.13 )
 speed = 210
@@ -330,6 +332,7 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU3" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( -52.5704, 1476.74 )
 speed = 210
@@ -339,6 +342,7 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU4" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( -475.88, 1172.17 )
 speed = 210
@@ -348,6 +352,7 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU5" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( 190.058, -247.469 )
 speed = 210
@@ -357,6 +362,7 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU6" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( 97.1367, 217.14 )
 speed = 210
@@ -366,9 +372,11 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU7" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( -733.996, 155.191 )
 
 [node name="EnemyFollowsU8" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( -620.425, -634.643 )
 speed = 210
@@ -378,6 +386,7 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU9" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.160784, 0.247059, 0.501961, 1 )
 position = Vector2( -548.153, -1883.92 )
 speed = 210
@@ -387,12 +396,15 @@ health = 60
 damage = 25
 
 [node name="EnemyFollowsU10" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( -47.4082, -1202.5 )
 
 [node name="EnemyFollowsU11" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( -0.947388, -717.24 )
 
 [node name="EnemyFollowsU12" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.215686, 0.819608, 0.129412, 1 )
 position = Vector2( 370.739, -1692.92 )
 speed = 230
@@ -402,6 +414,7 @@ health = 80
 damage = 35
 
 [node name="EnemyFollowsU13" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.215686, 0.819608, 0.129412, 1 )
 position = Vector2( -191.953, -2142.04 )
 speed = 230
@@ -411,6 +424,7 @@ health = 80
 damage = 35
 
 [node name="EnemyFollowsU14" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.215686, 0.819608, 0.129412, 1 )
 position = Vector2( -78.3823, -1687.76 )
 speed = 230
@@ -420,6 +434,7 @@ health = 80
 damage = 35
 
 [node name="EnemyFollowsU15" parent="Spawning area colection/Area2D6/Enemy_Collection" instance=ExtResource( 6 )]
+visible = false
 modulate = Color( 0.215686, 0.819608, 0.129412, 1 )
 position = Vector2( 597.881, -2224.64 )
 speed = 230
