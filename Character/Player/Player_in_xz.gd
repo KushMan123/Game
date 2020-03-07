@@ -209,3 +209,10 @@ func _on_Area2D_area_entered(area):
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')
 		music.play()
+
+
+func _on_Trap_hit_body_entered(body):
+	if body is Trap:
+		print("Hit taken")
+		damage(10)
+	pass

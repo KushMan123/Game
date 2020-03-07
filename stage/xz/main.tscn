@@ -632,7 +632,6 @@ scale = Vector2( 2, 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 14 )
-frame = 3
 playing = true
 
 [node name="leaves" parent="." instance=ExtResource( 16 )]
