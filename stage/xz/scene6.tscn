@@ -235,7 +235,7 @@ position = Vector2( 1711.8, 594.661 )
 scale = Vector2( 0.5, 0.75 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3158.04, 3283.28 )
+position = Vector2( 3158.04, 3427.82 )
 
 [node name="Spawning area" type="Node2D" parent="."]
 
