@@ -4,6 +4,8 @@ extends KinematicBody2D
 onready var tween=get_node("Tween")
 onready var timer=get_node("Timer")
 
+export var time=0.6
+
 var along_x
 var along_y
 var final_scale_x
@@ -46,7 +48,7 @@ func pull_along_x():
 	along_x=along_x-0.125
 	set_scale(Vector2(along_x,along_y))
 	if(get_scale()==Vector2(1,1)):
-		timer.start(2)
+		timer.start(time)
 		set_physics_process(false)
 	
 func push_along_y():
@@ -59,6 +61,6 @@ func pull_along_y():
 	along_y=along_y-0.125
 	set_scale(Vector2(along_x,along_y))
 	if(get_scale()==Vector2(1,1)):
-		timer.start(2)
+		timer.start(time)
 		set_physics_process(false)
 

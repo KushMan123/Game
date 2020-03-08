@@ -16,18 +16,18 @@ z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
-position = Vector2( 17.1793, -69.7101 )
+position = Vector2( 6.28134, -45.1896 )
 scale = Vector2( 0.0332089, 0.035 )
 frames = ExtResource( 3 )
 animation = "jump"
 playing = true
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 17.2008, -74.1239 )
+position = Vector2( 6.30285, -49.6035 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" parent="." index="2"]
-position = Vector2( 11.9242, -94.6016 )
+position = Vector2( -3.06048, -49.6475 )
 current = true
 zoom = Vector2( 1.3, 1.1 )
 limit_smoothed = true
@@ -39,10 +39,10 @@ editor_draw_limits = true
 
 [node name="HealthBar" type="TextureProgress" parent="." index="4"]
 modulate = Color( 0.929412, 0.94902, 0.92549, 1 )
-margin_left = -31.3547
-margin_top = -138.273
-margin_right = 3025.64
-margin_bottom = 1512.72
+margin_left = -32.7169
+margin_top = -128.737
+margin_right = 3024.28
+margin_bottom = 1522.26
 rect_scale = Vector2( 0.03, 0.02 )
 value = 100.0
 texture_under = ExtResource( 4 )
@@ -58,7 +58,7 @@ nine_patch_stretch = true
 one_shot = true
 
 [node name="Position2D" type="Position2D" parent="." index="6"]
-position = Vector2( 34.086, -63.7442 )
+position = Vector2( 23.188, -39.2238 )
 scale = Vector2( 5, 5 )
 z_as_relative = false
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
