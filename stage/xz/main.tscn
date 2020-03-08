@@ -642,10 +642,7 @@ scale = Vector2( 2, 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 14 )
-<<<<<<< HEAD
 frame = 1
-=======
->>>>>>> 524a5bde99dcfabe8a23a30fdc2e9c67eba1e9e1
 playing = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Waterfall"]
