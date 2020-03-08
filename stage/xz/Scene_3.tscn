@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=1]
 [ext_resource path="res://Tileset/Town set 1.tres" type="TileSet" id=2]
@@ -14,12 +14,7 @@
 [ext_resource path="res://Audio and sound effects/fire burning.wav" type="AudioStream" id=12]
 [ext_resource path="res://stage/xz/Scene_3.gd" type="Script" id=13]
 [ext_resource path="res://Character/Charcters/NPC.tscn" type="PackedScene" id=14]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2330.93, 2066.47 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 2024.85, 2681.02 )
+[ext_resource path="res://Character/Charcters/Wizard.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2379.01, 1296.04 )
@@ -343,20 +338,6 @@ scale = Vector2( 4, 4 )
 [node name="sound_area" type="Node2D" parent="."]
 visible = false
 
-[node name="village" type="Area2D" parent="sound_area"]
-position = Vector2( 2220.24, 1655.27 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/village"]
-position = Vector2( 12.793, -34.6326 )
-shape = SubResource( 1 )
-
-[node name="forest" type="Area2D" parent="sound_area"]
-position = Vector2( 6502.88, 1045.92 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/forest"]
-position = Vector2( -0.000488281, -27.3608 )
-shape = SubResource( 2 )
-
 [node name="wizard_place" type="Area2D" parent="sound_area"]
 position = Vector2( 2446.26, 5042.12 )
 
@@ -369,6 +350,7 @@ visible = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 4 )
+frame = 3
 playing = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Waterfall"]
@@ -423,10 +405,13 @@ position = Vector2( 1047.77, 2217.95 )
 position = Vector2( 661.165, 3619.57 )
 
 [node name="NPC7" parent="NPC_collection" instance=ExtResource( 14 )]
-position = Vector2( 375.808, 1469.89 )
+position = Vector2( 349.122, 1303.1 )
 
 [node name="NPC8" parent="NPC_collection" instance=ExtResource( 14 )]
 position = Vector2( 1835.74, 2326.14 )
 
 [node name="NPC9" parent="NPC_collection" instance=ExtResource( 14 )]
 position = Vector2( 2100.87, 1335.12 )
+
+[node name="Wizard" parent="." instance=ExtResource( 15 )]
+position = Vector2( 3248.18, 5158.87 )
