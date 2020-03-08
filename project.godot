@@ -211,9 +211,11 @@ Z_button={
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Character"
 2d_physics/layer_4="Traps"
+2d_physics/layer_5="Trap Layout"
 2d_physics/layer_6="Box"
 2d_physics/layer_7="Layout"
 2d_physics/layer_8="Bullet"
+2d_physics/layer_9="Door"
 
 [rendering]
 

@@ -2,11 +2,13 @@ extends Trap
 class_name Spiral_Trap
 
 var body_rotation
-var move_speed=120
+var move_speed=170
 var velocity= Vector2()
 var INITIAL_GLOBAL=Vector2()
 var along_x
 var along_y
+
+onready var parent=get_parent()
 
 func _ready() -> void:
 	INITIAL_GLOBAL.x=global_position.x
