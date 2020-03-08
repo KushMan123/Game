@@ -10,9 +10,14 @@
 [ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=8]
 [ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=9]
 [ext_resource path="res://Particles/Smoke.tscn" type="PackedScene" id=10]
+<<<<<<< HEAD
+[ext_resource path="res://Audio and sound effects/fire burning.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Audio and sound effects/crowd panic.ogg" type="AudioStream" id=12]
+=======
 [ext_resource path="res://Audio and sound effects/crowd panic.wav" type="AudioStream" id=11]
 [ext_resource path="res://Audio and sound effects/fire burning.wav" type="AudioStream" id=12]
 [ext_resource path="res://stage/xz/Scene_3.gd" type="Script" id=13]
+>>>>>>> a4d758a3bb98b561145fcb18606a7557ab1939ed
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2330.93, 2066.47 )
@@ -391,12 +396,12 @@ scale = Vector2( 30, 30 )
 
 [node name="fire" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 4582.9, 1819.48 )
-stream = ExtResource( 12 )
+stream = ExtResource( 11 )
 autoplay = true
 max_distance = 12000.0
 
 [node name="scream" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 2394.05, 1627.96 )
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 autoplay = true
 max_distance = 6000.0
