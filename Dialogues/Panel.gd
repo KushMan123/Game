@@ -5,6 +5,7 @@ var dialog_character_2 = ["Noooooo!! All my items are wasted. It will take some 
 var dialog_character_3 = ["It is a nice day today."," I wish everyday was like this."]
 var dialog_character_4 = ["Hello child!!! I am the gratest wizard this world has ever seen, who has answers to any questions. The mask you wear its something different like filled with magic. I want a precious item held in the cave ruins north to this town. Bring me this item and i will tell you what you want to know.","Bring me the item held in the cave ruins, north to the town and i will answer your question."]
 var dialog_character_5 = ["You are not allowed to go through. Beyond here is very dangerous."]
+var NPC_dialog = ["Hi! I am a musician. Would you like to listen to my guitar?... NO? It's okay I dont force people.", "I dont think this is where I was suppose to come.", "sssshhh. If you focus on your hearing you can listen to the noise of a waterfall.", "I came here to party. Let's rock !", "I like dogs. You're not a dog. Get out fo my sight.'"]
 var magical_item = ["This must be what that wizard wants. My work has paid off."]
 var page = 0
 var screensize
@@ -16,7 +17,7 @@ func _ready() -> void:
 	print(get_position())
 	#set_position(Vector2(screensize.size.x/2, screensize.size.y + 320))
 	#ss.x / 2 - 400,ss.y / 2 -250
-	set_position(Vector2(screensize.size.x/2-400,screensize.size.y/2+250))
+	set_position(Vector2(screensize.size.x/2 + 200, screensize.size.y +500))
 	print(get_position())
 
 func _on_Timer_timeout() -> void:

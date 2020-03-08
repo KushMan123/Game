@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://stage/xz/main.gd" type="Script" id=1]
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=2]
@@ -8,19 +8,20 @@
 [ext_resource path="res://Character/Charcters/Shopkeeper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Character/Charcters/Local.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Character/Charcters/Wizard.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Character/Charcters/Knight.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/items/4.png" type="Texture" id=10]
-[ext_resource path="res://assets/items/3.png" type="Texture" id=11]
-[ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=12]
-[ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Areas/town area.gd" type="Script" id=14]
-[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=15]
-[ext_resource path="res://cave/Cave1.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=17]
-[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=18]
-[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=19]
-[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=20]
-[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/items/4.png" type="Texture" id=9]
+[ext_resource path="res://assets/items/3.png" type="Texture" id=10]
+[ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=11]
+[ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Areas/town area.gd" type="Script" id=13]
+[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
+[ext_resource path="res://cave/Cave1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=17]
+[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=18]
+[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=19]
+[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=20]
+[ext_resource path="res://Character/Charcters/Knight.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Character/Charcters/NPC.tscn" type="PackedScene" id=22]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
@@ -53,10 +54,10 @@ extents = Vector2( 245.838, 558.036 )
 extents = Vector2( 2350.64, 2057.78 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 2330.93, 2066.47 )
+extents = Vector2( 2330.93, 2106.44 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 2024.85, 2681.02 )
+extents = Vector2( 1834.02, 2681.02 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 2379.01, 1296.04 )
@@ -180,6 +181,15 @@ collision_layer = 4
 
 [node name="Character_6" parent="Charcter_collection" instance=ExtResource( 9 )]
 position = Vector2( 3161.78, -241.933 )
+
+[node name="NPC_7" parent="Charcter_collection" instance=ExtResource( 22 )]
+position = Vector2( 1253.47, 1140.45 )
+
+[node name="NPC_8" parent="Charcter_collection" instance=ExtResource( 22 )]
+position = Vector2( 904.143, 1366.49 )
+
+[node name="NPC_9" parent="Charcter_collection" instance=ExtResource( 22 )]
+position = Vector2( 1376.76, 1352.79 )
 
 [node name="Event_item_collection" type="Node2D" parent="."]
 
@@ -588,8 +598,8 @@ script = ExtResource( 14 )
 position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
-[node name="Player" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1412.36, 491.944 )
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( 7518.27, -1095.46 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -609,6 +619,9 @@ shape = SubResource( 11 )
 
 [node name="forest" type="Area2D" parent="sound_area"]
 position = Vector2( 6502.88, 1045.92 )
+
+[node name="Cave1" parent="sound_area/forest" instance=ExtResource( 15 )]
+position = Vector2( 699.038, -2351.36 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/forest"]
 position = Vector2( -0.000488281, -27.3608 )
