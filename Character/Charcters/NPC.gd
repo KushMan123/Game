@@ -4,11 +4,25 @@ extends "res://Character/Charcters/Characters.gd"
 onready var dialog = get_node("CanvasLayer/DialogBox")
 
 var num
+var tween_bool = false
+var initial
+var final
+var ran
+var naam
+
 func _ready() -> void:
-	pass
+	naam = self.name
+	initial = self.get_position()
+	if int(naam[-1]) % 2 == 0:
+		final = Vector2(initial.x + 500, initial.y)
+	else:
+		final = Vector2(initial.x, initial.y  + 500)
+	$Tween.interpolate_property(self, "position", initial, final, 2, Tween.TRANS_LINEAR,Tween.EASE_IN)
+	$Tween.start()
 
 func _process(delta: float) -> void:
-	pass
+	var ran = rand_range(0,1)
+	
 	
 func _dialogs():
 	num = rand_range(0,5)
@@ -44,3 +58,13 @@ func _on_Area2D_body_exited(body):
 		print(global.is_talkable," is talkable Area Exited")
 		global.area_entered_name="No area entered"
 		dialog.set_visible(false)
+
+
+func _on_Timer_timeout():
+	if tween_bool:
+		$Tween.interpolate_property(self, "position", initial, final, 2, Tween.TRANS_LINEAR,Tween.EASE_IN)
+		$Tween.start()
+	elif !tween_bool:
+		$Tween.interpolate_property(self, "position", final, initial, 2, Tween.TRANS_LINEAR,Tween.EASE_IN)
+		$Tween.start()
+	tween_bool = !tween_bool

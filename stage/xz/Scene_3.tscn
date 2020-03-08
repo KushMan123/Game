@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=1]
 [ext_resource path="res://Tileset/Town set 1.tres" type="TileSet" id=2]
@@ -10,14 +10,10 @@
 [ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=8]
 [ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=9]
 [ext_resource path="res://Particles/Smoke.tscn" type="PackedScene" id=10]
-<<<<<<< HEAD
-[ext_resource path="res://Audio and sound effects/fire burning.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Audio and sound effects/crowd panic.ogg" type="AudioStream" id=12]
-=======
 [ext_resource path="res://Audio and sound effects/crowd panic.wav" type="AudioStream" id=11]
 [ext_resource path="res://Audio and sound effects/fire burning.wav" type="AudioStream" id=12]
 [ext_resource path="res://stage/xz/Scene_3.gd" type="Script" id=13]
->>>>>>> a4d758a3bb98b561145fcb18606a7557ab1939ed
+[ext_resource path="res://Character/Charcters/NPC.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2330.93, 2066.47 )
@@ -134,7 +130,7 @@ tile_data = PoolIntArray( 720963, 29, 0, 786475, 29, 0, 786490, 29, 0, 852031, 2
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.831373, 0.227451, 0.227451, 1 )
-position = Vector2( 6954.06, -1017.29 )
+position = Vector2( 3101.96, 526.018 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 modulate = Color( 0.886275, 0.360784, 0.360784, 1 )
@@ -405,3 +401,32 @@ position = Vector2( 2394.05, 1627.96 )
 stream = ExtResource( 12 )
 autoplay = true
 max_distance = 6000.0
+
+[node name="NPC_collection" type="Node" parent="."]
+
+[node name="NPC" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 544.599, 499.645 )
+
+[node name="NPC2" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 1498.93, 499.645 )
+
+[node name="NPC3" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 2395.74, 516.027 )
+
+[node name="NPC4" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 1189.2, 1270.51 )
+
+[node name="NPC5" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 1047.77, 2217.95 )
+
+[node name="NPC6" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 661.165, 3619.57 )
+
+[node name="NPC7" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 375.808, 1469.89 )
+
+[node name="NPC8" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 1835.74, 2326.14 )
+
+[node name="NPC9" parent="NPC_collection" instance=ExtResource( 14 )]
+position = Vector2( 2100.87, 1335.12 )
