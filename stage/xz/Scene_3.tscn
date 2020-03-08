@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=1]
 [ext_resource path="res://Tileset/Town set 1.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=8]
 [ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=9]
 [ext_resource path="res://Particles/Smoke.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio and sound effects/crowd panic.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio and sound effects/fire burning.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2330.93, 2066.47 )
@@ -125,7 +127,7 @@ tile_data = PoolIntArray( 720963, 29, 0, 786475, 29, 0, 786490, 29, 0, 852031, 2
 
 [node name="Player_in_xz" parent="." instance=ExtResource( 4 )]
 modulate = Color( 0.831373, 0.227451, 0.227451, 1 )
-position = Vector2( 1153.17, 549.375 )
+position = Vector2( 6954.06, -1017.29 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 modulate = Color( 0.886275, 0.360784, 0.360784, 1 )
@@ -364,19 +366,13 @@ visible = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 4 )
-frame = 2
+frame = 3
 playing = true
 
-[node name="waterfall" type="Node2D" parent="."]
-visible = false
-position = Vector2( 6661.63, -1433.98 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="waterfall"]
-position = Vector2( -431.412, 0 )
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Waterfall"]
+position = Vector2( 6230.22, -1433.98 )
 stream = ExtResource( 9 )
+autoplay = true
 
 [node name="Smoke" type="Node2D" parent="."]
 
@@ -391,3 +387,15 @@ scale = Vector2( 30, 30 )
 [node name="Smoke3" parent="Smoke" instance=ExtResource( 10 )]
 position = Vector2( 2992.68, 4331.91 )
 scale = Vector2( 30, 30 )
+
+[node name="fire" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 4582.9, 1819.48 )
+stream = ExtResource( 12 )
+autoplay = true
+max_distance = 12000.0
+
+[node name="scream" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2394.05, 1627.96 )
+stream = ExtResource( 11 )
+autoplay = true
+max_distance = 6000.0

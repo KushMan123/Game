@@ -3,7 +3,6 @@
 [ext_resource path="res://Character/Charcters/Characters.gd" type="Script" id=1]
 [ext_resource path="res://Dialogues/Dialog.tscn" type="PackedScene" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.8709, 84.0346 )
 

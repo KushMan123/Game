@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Tileset/Dark Green Grassland.tres" type="TileSet" id=1]
 [ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=6]
 [ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=7]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio and sound effects/cold wind.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 507.682, 685.8 )
@@ -466,6 +467,12 @@ position = Vector2( 4059.38, 3085.09 )
 [node name="Leaf Particle6" parent="." instance=ExtResource( 8 )]
 modulate = Color( 0.65098, 0.309804, 0.309804, 1 )
 position = Vector2( 4050.76, 774.381 )
+
+[node name="wind" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 3527.13, 3174.42 )
+stream = ExtResource( 9 )
+autoplay = true
+max_distance = 5000.0
 [connection signal="shoot" from="Player" to="." method="_on_shoot"]
 [connection signal="body_entered" from="Spawning area colection/Area2D" to="Spawning area colection/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning area colection/Area2D" to="." method="_on_Area2D_player_entered"]
