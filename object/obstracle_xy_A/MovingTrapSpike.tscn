@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/xy/obstracles_xy_A/spike A.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.7234, 24.6269 )
+extents = Vector2( 32.5036, 15.686 )
 
 [node name="MovingTrapSpike" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +16,7 @@ scale = Vector2( 0.3, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2( -0.513336, 2.56674 )
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
