@@ -8,7 +8,7 @@
 [ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=6]
 [ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=7]
 [ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Audio and sound effects/cold wind.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio and sound effects/cold wind.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 507.682, 685.8 )
