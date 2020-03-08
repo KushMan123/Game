@@ -3,6 +3,7 @@ extends Node2D
 onready var Player=get_node("Player_xy_1")
 onready var bgmusic = $Player_xy_1/AudioStreamPlayer2D
 var key_found=false
+var key_found2=false
 
 func _ready():
 	pass
@@ -42,9 +43,29 @@ func _on_key_key_found(value:bool):
 		$key.queue_free()
 
 
+
+
+
 func _on_Treasurefound_treasure_found(value:bool):
 	if value==true:
 		$HiddenWall.set_visible(true)
 		$HiddenWall.set_collision_layer_bit(15,true)
 		$HiddenWall.set_collision_mask_bit(0,true)
 	
+
+func _on_door2_In_door_area2(value:bool):
+		if value==true:
+			if key_found2==true:
+				print("Inside Door func")
+				$door2/Timer.start()
+				$door2/Sprite.set_visible(false)
+				$door2.queue_free()
+
+	
+
+func _on_key2_key_found2(value:bool):
+	
+		if value==true:
+			key_found2=true
+			print("inside key")
+			$key2.queue_free()

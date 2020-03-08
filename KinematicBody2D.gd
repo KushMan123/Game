@@ -40,7 +40,7 @@ func set_movement_and_rotation(direction_x,direction_y,body_rotation_given,scale
 
 
 func _physics_process(delta):
-	platform.position = platform.position.linear_interpolate(follow , 0.075)
+	#platform.position = platform.position.linear_interpolate(follow , 0.075)
 	if is_rotating:
 		body_rotation=body_rotation  + 5
 		set_rotation_degrees(body_rotation)

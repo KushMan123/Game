@@ -3,7 +3,7 @@ signal health_update(health)
 signal killed()
 const SPEED=350
 const GRAVITY=10
-const JUMP_POWER =-550
+const JUMP_POWER =-570
 const FLOOR = Vector2(0,-1)
 
 const FIREBALL =preload("res://object/Playerfire_XY_A/Fireball.tscn")
@@ -142,7 +142,7 @@ func _physics_process(delta):
 		
 		if get_slide_count()>0:
 			for i in range(get_slide_count()):
-				if "Water" in get_slide_collision(i).collider.name:
+				if "water_flowing_XY_A" in get_slide_collision(i).collider.name:
 					dead()
 		
 func dead():

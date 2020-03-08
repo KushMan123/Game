@@ -12,7 +12,7 @@ var audio
 onready var spawned=false
 
 func _ready() -> void:
-	$Waterfall/AudioStreamPlayer2D.play()
+	$waterfall/AudioStreamPlayer2D.play()
 	audio = AudioStreamPlayer2D.new()
 	$Player.add_child(audio)
 	set_process(true)
