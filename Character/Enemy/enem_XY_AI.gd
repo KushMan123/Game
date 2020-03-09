@@ -21,7 +21,7 @@ var state=Move
 const SPEED = 30
 var direction=Vector2.RIGHT
 var count=0
-const FIREBALL =preload("res://enemyBullet.tscn")
+const FIREBALL =preload("res://object/Enemy_bullet_XY_A/enemyBullet.tscn")
 var fireball=null
 func _ready():
 	randomize()

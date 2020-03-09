@@ -45,7 +45,6 @@ rotation = -5.47968e-10
 scale = Vector2( 0.159337, 0.159337 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
 playing = true
 
 [node name="Enemy" type="CollisionShape2D" parent="."]
