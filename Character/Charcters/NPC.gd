@@ -13,12 +13,12 @@ var naam
 func _ready() -> void:
 	naam = self.name
 	initial = self.get_position()
-	if int(naam[-1]) % 2 == 0:
-		final = Vector2(initial.x + 500, initial.y)
-	else:
-		final = Vector2(initial.x, initial.y  + 500)
-	$Tween.interpolate_property(self, "position", initial, final, 2, Tween.TRANS_LINEAR,Tween.EASE_IN)
-	$Tween.start()
+#	if int(naam[-1]) % 2 == 0:
+#		final = Vector2(initial.x + 500, initial.y)
+#	else:
+#		final = Vector2(initial.x, initial.y  + 500)
+#		$Tween.interpolate_property(self, "position", initial, final, 2, Tween.TRANS_LINEAR,Tween.EASE_IN)
+#	$Tween.start()
 
 func _process(delta: float) -> void:
 	var ran = rand_range(0,1)
@@ -30,13 +30,13 @@ func _dialogs():
 	print(bool(global.is_talkable),"Character 1")
 	dialog.set_visible(true)
 	print("character 1")
-	if global.is_present(global.event_collection,'Event_1'):
-		dialog.get_node("Text").set_bbcode(dialog.NPC_dialog[num])
-		dialog.get_node("Text").set_visible_characters(0)
-	else:
+	if global.is_present(global.event_collection, 'Event 3'):
 		print("OKAYY...")
 		dialog.get_node("Text").set_bbcode("Chaos")
 		print("character 1")
+	else:
+		dialog.get_node("Text").set_bbcode(dialog.NPC_dialog[num])
+		dialog.get_node("Text").set_visible_characters(0)
 	c= global.is_present(global.people_talked_collection,"NPC")
 	if not c:
 		global.people_talked_collection.append("NPC")

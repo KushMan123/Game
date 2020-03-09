@@ -41,6 +41,7 @@ func _on_key_key_found(value:bool):
 		key_found=true
 		print("inside key")
 		$key.queue_free()
+		global.event_collection.append("Event 3")
 
 
 
