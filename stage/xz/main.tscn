@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://stage/xz/main.gd" type="Script" id=1]
 [ext_resource path="res://Tileset/Green Grassland.tres" type="TileSet" id=2]
@@ -8,20 +8,19 @@
 [ext_resource path="res://Character/Charcters/Shopkeeper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Character/Charcters/Local.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Character/Charcters/Wizard.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/items/4.png" type="Texture" id=9]
-[ext_resource path="res://assets/items/3.png" type="Texture" id=10]
-[ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=11]
-[ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Areas/town area.gd" type="Script" id=13]
-[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
-[ext_resource path="res://cave/Cave1.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=17]
-[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=18]
-[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=19]
-[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=20]
-[ext_resource path="res://Character/Charcters/Knight.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Character/Charcters/NPC.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Character/Charcters/Knight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/items/4.png" type="Texture" id=10]
+[ext_resource path="res://assets/items/3.png" type="Texture" id=11]
+[ext_resource path="res://stage/xz/Area2D.gd" type="Script" id=12]
+[ext_resource path="res://Character/Enemy/EnemyFollowsU.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Areas/town area.gd" type="Script" id=14]
+[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=15]
+[ext_resource path="res://cave/Cave1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Particles/leavf_particle.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/Waterfall animation/2.png" type="Texture" id=18]
+[ext_resource path="res://assets/Waterfall animation/3.png" type="Texture" id=19]
+[ext_resource path="res://assets/Waterfall animation/4.png" type="Texture" id=20]
+[ext_resource path="res://Audio and sound effects/waterfall.wav" type="AudioStream" id=21]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 40.8125
@@ -64,7 +63,7 @@ extents = Vector2( 2379.01, 1296.04 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ null, ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ null, ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -175,21 +174,12 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 3226.58, 5087.93 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Character_5" parent="Charcter_collection" instance=ExtResource( 21 )]
+[node name="Character_5" parent="Charcter_collection" instance=ExtResource( 9 )]
 position = Vector2( 3031.14, -241.052 )
 collision_layer = 4
 
-[node name="Character_6" parent="Charcter_collection" instance=ExtResource( 21 )]
+[node name="Character_6" parent="Charcter_collection" instance=ExtResource( 9 )]
 position = Vector2( 3161.78, -241.933 )
-
-[node name="NPC7" parent="Charcter_collection" instance=ExtResource( 22 )]
-position = Vector2( 1148.83, 1260.52 )
-
-[node name="NPC8" parent="Charcter_collection" instance=ExtResource( 22 )]
-position = Vector2( 1691.33, 1308.39 )
-
-[node name="NPC9" parent="Charcter_collection" instance=ExtResource( 22 )]
-position = Vector2( 1116.91, 1691.33 )
 
 [node name="Event_item_collection" type="Node2D" parent="."]
 
@@ -203,7 +193,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 1"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 1"]
 position = Vector2( 14.9375, 8.1322 )
@@ -219,7 +209,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 5"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 5"]
 position = Vector2( 14.9375, 8.1322 )
@@ -235,7 +225,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 2"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 2"]
 position = Vector2( 14.9375, 8.1322 )
@@ -251,7 +241,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 6"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 6"]
 position = Vector2( 14.9375, 8.1322 )
@@ -267,7 +257,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 10"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 10"]
 position = Vector2( 14.9375, 8.1322 )
@@ -283,7 +273,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 3"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 3"]
 position = Vector2( 11.6953, 4.3497 )
@@ -299,7 +289,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 7"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 7"]
 position = Vector2( 11.6953, 4.3497 )
@@ -315,7 +305,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 4"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 4"]
 position = Vector2( 11.6953, 4.3497 )
@@ -331,7 +321,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 8"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 8"]
 position = Vector2( 11.6953, 4.3497 )
@@ -347,7 +337,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Event_item_collection/Obstacle 9"]
 position = Vector2( 10.9464, 6.30246 )
 scale = Vector2( 1.52479, 1.52479 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event_item_collection/Obstacle 9"]
 position = Vector2( 11.6953, 4.3497 )
@@ -358,7 +348,7 @@ shape = SubResource( 2 )
 [node name="Area_1" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 5834.82, 2342.47 )
 collision_layer = 512
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -370,33 +360,33 @@ shape = SubResource( 3 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_1"]
 position = Vector2( -5834.82, -2342.47 )
 
-[node name="EnemyFollowsU" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 5596.4, 2350.64 )
 
-[node name="EnemyFollowsU2" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU2" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 5931.46, 2650.63 )
 
-[node name="EnemyFollowsU3" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU3" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 5943.15, 2235.71 )
 
-[node name="EnemyFollowsU4" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU4" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6328.85, 2514.27 )
 
-[node name="EnemyFollowsU5" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU5" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6297.69, 2109.09 )
 
-[node name="EnemyFollowsU6" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU6" parent="Spawning_area_collection/Area_1/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6299.63, 1848.05 )
 
 [node name="Area_2" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 6230.22, 770.905 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -407,29 +397,29 @@ shape = SubResource( 4 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_2"]
 position = Vector2( -6230.22, -770.905 )
 
-[node name="EnemyFollowsU7" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU7" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6276.27, 910.357 )
 
-[node name="EnemyFollowsU8" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU8" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6551.87, 902.407 )
 
-[node name="EnemyFollowsU9" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU9" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 5865.51, 841.457 )
 
-[node name="EnemyFollowsU10" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU10" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 5881.41, 685.105 )
 
-[node name="EnemyFollowsU11" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU11" parent="Spawning_area_collection/Area_2/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6766.52, 952.758 )
 
 [node name="Area_3" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 7471.85, 2942.44 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -440,29 +430,29 @@ shape = SubResource( 5 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_3"]
 position = Vector2( -7471.85, -2942.44 )
 
-[node name="EnemyFollowsU12" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU12" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7166.53, 2638.12 )
 
-[node name="EnemyFollowsU13" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU13" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7158.16, 2997.96 )
 
-[node name="EnemyFollowsU14" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU14" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7484.54, 3037.02 )
 
-[node name="EnemyFollowsU15" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU15" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7696.54, 3293.65 )
 
-[node name="EnemyFollowsU16" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU16" parent="Spawning_area_collection/Area_3/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7682.59, 2671.59 )
 
 [node name="Area_4" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 7752.22, 1320.81 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -473,25 +463,25 @@ shape = SubResource( 6 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_4"]
 position = Vector2( -7752.22, -1320.81 )
 
-[node name="EnemyFollowsU17" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU17" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7573.23, 1193.15 )
 
-[node name="EnemyFollowsU18" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU18" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7938.66, 1204.31 )
 
-[node name="EnemyFollowsU19" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU19" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7581.6, 1444.21 )
 
-[node name="EnemyFollowsU20" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU20" parent="Spawning_area_collection/Area_4/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7935.87, 1452.58 )
 
 [node name="Area_5" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 7763.48, -441.701 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -502,29 +492,29 @@ shape = SubResource( 7 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_5"]
 position = Vector2( -7763.48, 441.701 )
 
-[node name="EnemyFollowsU21" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU21" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 8118.7, -635.368 )
 
-[node name="EnemyFollowsU22" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU22" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7859.07, -490.097 )
 
-[node name="EnemyFollowsU23" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU23" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7478.89, -619.913 )
 
-[node name="EnemyFollowsU24" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU24" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 8097.07, -249.01 )
 
-[node name="EnemyFollowsU25" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU25" parent="Spawning_area_collection/Area_5/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7475.8, -320.099 )
 
 [node name="Area_6" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 7091.85, -440.322 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -535,29 +525,29 @@ shape = SubResource( 8 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_6"]
 position = Vector2( -7091.85, 440.322 )
 
-[node name="EnemyFollowsU26" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU26" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6616.54, -589.005 )
 
-[node name="EnemyFollowsU27" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU27" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6993.63, -629.186 )
 
-[node name="EnemyFollowsU28" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU28" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6567.09, -295.373 )
 
-[node name="EnemyFollowsU29" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU29" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6922.54, -258.282 )
 
-[node name="EnemyFollowsU30" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU30" parent="Spawning_area_collection/Area_6/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 7175.99, -338.645 )
 
 [node name="Area_7" type="Area2D" parent="Spawning_area_collection"]
 position = Vector2( 6294.68, -1061.52 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -568,23 +558,23 @@ shape = SubResource( 9 )
 [node name="Enemy_Collection" type="Node2D" parent="Spawning_area_collection/Area_7"]
 position = Vector2( -6294.68, 1061.52 )
 
-[node name="EnemyFollowsU31" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU31" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6162.19, -1374.08 )
 
-[node name="EnemyFollowsU32" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU32" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6341.46, -1367.9 )
 
-[node name="EnemyFollowsU33" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU33" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6128.19, -1142.27 )
 
-[node name="EnemyFollowsU34" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU34" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6384.73, -1157.72 )
 
-[node name="EnemyFollowsU35" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 12 )]
+[node name="EnemyFollowsU35" parent="Spawning_area_collection/Area_7/Enemy_Collection" instance=ExtResource( 13 )]
 visible = false
 position = Vector2( 6409.45, -888.818 )
 
@@ -592,14 +582,19 @@ position = Vector2( 6409.45, -888.818 )
 
 [node name="town area" type="Area2D" parent="Area"]
 position = Vector2( 2318.85, 1676.26 )
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area/town area"]
 position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
+<<<<<<< HEAD
 [node name="Player" parent="." instance=ExtResource( 14 )]
 position = Vector2( 7523.48, -1007.91 )
+=======
+[node name="Player" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1412.36, 491.944 )
+>>>>>>> 89f965eddc8efee77702846f1a15311cbf1c5dae
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -624,7 +619,7 @@ position = Vector2( 6502.88, 1045.92 )
 position = Vector2( -0.000488281, -27.3608 )
 shape = SubResource( 12 )
 
-[node name="Cave1" parent="sound_area/forest/CollisionShape2D" instance=ExtResource( 15 )]
+[node name="Cave1" parent="sound_area/forest/CollisionShape2D" instance=ExtResource( 16 )]
 position = Vector2( 699.038, -2324 )
 
 [node name="wizard_place" type="Area2D" parent="sound_area"]
@@ -633,7 +628,7 @@ position = Vector2( 2446.26, 5042.12 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sound_area/wizard_place"]
 shape = SubResource( 13 )
 
-[node name="Leaf particle" parent="." instance=ExtResource( 16 )]
+[node name="Leaf particle" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3641.67, -1992.43 )
 scale = Vector2( 2, 2 )
 
@@ -642,10 +637,13 @@ scale = Vector2( 2, 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 14 )
+<<<<<<< HEAD
 frame = 2
+=======
+>>>>>>> 89f965eddc8efee77702846f1a15311cbf1c5dae
 playing = true
 
-[node name="leaves" parent="." instance=ExtResource( 16 )]
+[node name="leaves" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3641.67, -1992.43 )
 scale = Vector2( 2, 2 )
 
@@ -657,7 +655,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="waterfall"]
 position = Vector2( -431.412, 0 )
-stream = ExtResource( 20 )
+stream = ExtResource( 21 )
 [connection signal="body_entered" from="Spawning_area_collection/Area_1" to="Spawning_area_collection/Area_1" method="_on_Area2D_body_entered"]
 [connection signal="player_entered" from="Spawning_area_collection/Area_1" to="." method="_on_Area2D_player_entered"]
 [connection signal="shoot" from="Spawning_area_collection/Area_1/Enemy_Collection/EnemyFollowsU" to="." method="_on_shoot"]
