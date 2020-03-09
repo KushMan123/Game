@@ -22,7 +22,7 @@ var ideal_state
 var walking
 var shoot
 var music
-var inside_area = []
+var inside_area = ['none']
 
 var shooting = true
 var can_shoot=true
@@ -52,10 +52,11 @@ func _physics_process(delta: float) -> void:
 			walking.stream = load('res://Audio and sound effects/walking-[AudioTrimmer.com].wav')
 		if Input.is_action_just_released("boost"):
 			MAX_SPEED=350.0
-			if inside_area[-1] == 'village':
+			if inside_area:
+				if inside_area[-1] == 'forest':
+					walking.stream = load('res://Audio and sound effects/forest_walking.wav')
+			else:
 				walking.stream = load('res://Audio and sound effects/walking.wav')
-			elif inside_area[-1] == 'forest':
-				walking.stream = load('res://Audio and sound effects/forest_walking.wav')
 		
 		update_animation(direction,before_direction)
 		set_position2d()

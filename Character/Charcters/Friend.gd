@@ -21,6 +21,7 @@ func _dialogs():
 	else:
 		print("OKAYY...")
 		dialog.get_node("Text").set_bbcode(dialog.dialog_character_1[1])
+		dialog.get_node("Text").set_visible_characters(0)
 		print("character 1")
 	c= global.is_present(global.people_talked_collection,"Character_1")
 	if not c:
