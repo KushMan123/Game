@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Character/Enemy/Main_Boss.tscn" type="PackedScene" id=1]
+[ext_resource path="res://demo.gd" type="Script" id=2]
+[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=3]
+[ext_resource path="res://object/Bullets_xz/EnemyBullet.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Main_Boss" parent="." instance=ExtResource( 1 )]
+position = Vector2( 447.656, 271.046 )
+rotation = 0.0204918
+Fireball_2 = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 583.996, 627.997 )
+[connection signal="shoot_fireball" from="Main_Boss" to="." method="_on_shoot"]
+[connection signal="shoot_from_turrent_1" from="Main_Boss" to="." method="_on_shoot"]
+[connection signal="shoot_from_turrent_2" from="Main_Boss" to="." method="_on_shoot"]
+[connection signal="shoot_from_turrent_3" from="Main_Boss" to="." method="_on_shoot"]
+[connection signal="shoot_from_turrent_4" from="Main_Boss" to="." method="_on_shoot"]
+[connection signal="shoot" from="Player" to="." method="_on_shoot"]

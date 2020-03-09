@@ -10,6 +10,21 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Boss",
+"language": "GDScript",
+"path": "res://Character/Enemy/Main_Boss.gd"
+}, {
+"base": "Bullet_xz",
+"class": "Boss_bullet_1",
+"language": "GDScript",
+"path": "res://Boss_bullet_1.gd"
+}, {
+"base": "Bullet_xz",
+"class": "Boss_bullet_2",
+"language": "GDScript",
+"path": "res://Boss_bullet_2.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Box",
 "language": "GDScript",
 "path": "res://object/Box_xz/Box.gd"
@@ -115,6 +130,9 @@ _global_script_classes=[ {
 "path": "res://object/Trap_xz/Trap.gd"
 } ]
 _global_script_class_icons={
+"Boss": "",
+"Boss_bullet_1": "",
+"Boss_bullet_2": "",
 "Box": "",
 "Bullet_xz": "",
 "Character": "",

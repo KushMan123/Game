@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Character/Enemy/EnemyFollowsU.gd" type="Script" id=1]
 [ext_resource path="res://object/Bullets_xz/EnemyBullet.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/Character spriites/Enemy/9.png" type="Texture" id=11]
 [ext_resource path="res://assets/Character spriites/Enemy/10.png" type="Texture" id=12]
 [ext_resource path="res://icon.png" type="Texture" id=13]
+[ext_resource path="res://Character/Player/Player_in_xz.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +46,6 @@ rotation = -5.47968e-10
 scale = Vector2( 0.159337, 0.159337 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
 playing = true
 
 [node name="Enemy" type="CollisionShape2D" parent="."]
@@ -74,6 +74,9 @@ shape = SubResource( 3 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="GunTimer" type="Timer" parent="."]
+
+[node name="Player_in_xz" parent="." instance=ExtResource( 14 )]
+position = Vector2( 114.863, 149.843 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

@@ -185,6 +185,9 @@ func _on_Bullet_area_area_entered(area: Area2D) -> void:
 	if area is EnemyBullet:
 		print("Hit taken")
 		damage(area.damage)
+	if area is Boss_bullet_1:
+		print("hit_taken")
+		damage(area.damage)
 	pass
 
 

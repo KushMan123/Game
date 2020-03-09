@@ -14,8 +14,8 @@ enum  {
 		New_direction,
 		Attack1,
 		Attack2,
-    
-    }
+	
+	}
 
 var state=Move
 const SPEED = 30

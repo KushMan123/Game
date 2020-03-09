@@ -10,6 +10,7 @@ var velocity = Vector2()
 func start(_position, _direction):
 	position = _position
 	rotation = _direction.angle()
+	print("Bullet",position,rotation,_direction,velocity,speed)
 	$Lifetime.wait_time = lifetime
 	velocity = _direction * speed
 
