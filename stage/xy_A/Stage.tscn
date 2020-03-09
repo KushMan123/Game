@@ -684,7 +684,7 @@ self_modulate = Color( 0.941176, 0.847059, 0.847059, 1 )
 position = Vector2( 1035.04, 5126.93 )
 texture = ExtResource( 10 )
 
-[node name="EnemyFollowsU" parent="." instance=ExtResource( 11 )]
+[node name="EnemyFollowsU2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2094.75, -168.477 )
 
 [node name="Player_xy_1" parent="." instance=ExtResource( 12 )]
