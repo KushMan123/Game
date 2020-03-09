@@ -6,7 +6,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	print("CAVE", enter)
 	if enter:
 		get_tree().change_scene("res://stage/xy_A/Stage.tscn")
 

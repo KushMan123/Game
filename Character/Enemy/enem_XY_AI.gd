@@ -14,8 +14,8 @@ enum  {
 		New_direction,
 		Attack1,
 		Attack2,
-    
-    }
+	
+	}
 
 var state=Move
 const SPEED = 30
@@ -41,15 +41,11 @@ func _process(delta):
 		Move:
 			move(delta)
 		Attack1:
-			
-			 fireball=FIREBALL.instance()
-			
-				
-				fireball.set_fireball_direction(1)
-				
-				get_parent().add_child(fireball)
-				fireball.position=$Position2D2.global_position
-				yield(get_tree().create_timer(4),"timeout")
+			fireball=FIREBALL.instance()
+			fireball.set_fireball_direction(1)
+			get_parent().add_child(fireball)
+			fireball.position=$Position2D2.global_position
+			yield(get_tree().create_timer(4),"timeout")
 		Attack2:
 			fireball=FIREBALL.instance()
 			

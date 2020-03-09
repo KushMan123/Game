@@ -599,7 +599,7 @@ position = Vector2( 0, 77.2495 )
 shape = SubResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 3215.38, 5422.32 )
+position = Vector2( 7523.48, -1007.91 )
 
 [node name="Tree leaves" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -642,7 +642,7 @@ scale = Vector2( 2, 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Waterfall"]
 position = Vector2( 6658, -1509.04 )
 frames = SubResource( 14 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="leaves" parent="." instance=ExtResource( 16 )]
