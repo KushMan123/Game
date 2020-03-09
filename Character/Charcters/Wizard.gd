@@ -16,9 +16,13 @@ func _dialogs():
 		#if portal.used_portal:
 		#	dialogs_page["char_4"]["page"] = 3
 		#	dialog.get_node("Text").set_bbcode(dialog.dialog_character_4[3])
-	if dialogs_page["char_4"]["talked"] and dialogs_page["char_4"]["page"] < 1:
+	if global.is_present(global.event_collection, "Event 3"):
+		dialog.get_node("Text").set_bbcode(dialog.dialog_character_4[2])
+		dialog.get_node("Text").set_visible_characters(0)
+	elif dialogs_page["char_4"]["talked"] and dialogs_page["char_4"]["page"] < 1:
 		dialogs_page["char_4"]["page"] += 1
 		dialog.get_node("Text").set_bbcode(dialog.dialog_character_4[dialogs_page["char_4"]["page"]])
+		dialog.get_node("Text").set_visible_characters(0)
 		
 	else:
 		dialogs_page["char_4"]["talked"] = true

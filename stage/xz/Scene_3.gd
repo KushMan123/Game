@@ -1,12 +1,23 @@
 extends Node2D
 
+var audio
+onready var Character_collection = $NPC_collection
 
 func _ready():
 	set_process(true)
 	set_camera_limits()
+	audio = AudioStreamPlayer2D.new()
+	$Player.add_child(audio)
 	
 func _process(delta):
-	pass
+	if global.is_inside_area and global.is_talkable:
+		if Input.is_action_just_pressed("Z_button"):
+			print("z button pressed")
+			audio.stream = load("res://Audio and sound effects/select_sound.wav")
+			audio.set_volume_db(10)
+			audio.play()
+			var index=int(global.area_entered_name[-1])
+			Character_collection.get_child(index-1)._dialogs()
 
 func set_camera_limits():
 	var map_limits=$"Tilemap collection/Grass".get_used_rect()

@@ -138,12 +138,17 @@ func _physics_process(delta):
 		if get_slide_count()>0:
 			for i in range(get_slide_count()):
 				if "enemy_xy_A1" in get_slide_collision(i).collider.name:
-					dead()
+					damage(40)
 		
 		if get_slide_count()>0:
 			for i in range(get_slide_count()):
 				if "water_flowing_XY_A" in get_slide_collision(i).collider.name:
 					dead()
+		
+		if get_slide_count()>0:
+			for i in range(get_slide_count()):
+				if "SizeChangeTrap" in get_slide_collision(i).collider.name:
+					damage(2)
 		
 func dead():
 	is_dead = true

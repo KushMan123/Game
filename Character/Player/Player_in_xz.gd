@@ -22,6 +22,7 @@ var ideal_state
 var walking
 var shoot
 var music
+var inside_area = ['none']
 
 var shooting = true
 var can_shoot=true
@@ -48,8 +49,15 @@ func _physics_process(delta: float) -> void:
 			shoot()
 		if Input.is_action_just_pressed("boost"):
 			MAX_SPEED=450.0
+			walking.stream = load('res://Audio and sound effects/walking-[AudioTrimmer.com].wav')
 		if Input.is_action_just_released("boost"):
 			MAX_SPEED=350.0
+			if inside_area:
+				if inside_area[-1] == 'forest':
+					walking.stream = load('res://Audio and sound effects/forest_walking.wav')
+			else:
+				walking.stream = load('res://Audio and sound effects/walking.wav')
+		
 		update_animation(direction,before_direction)
 		set_position2d()
 		motion=calculate_motion(direction,move_speed,delta)
@@ -203,11 +211,13 @@ func _on_Area2D_area_entered(area):
 		music.set_volume_db(10)
 		music.stream = load('res://Audio and sound effects/village.ogg') 
 		music.play()
+		inside_area.append(area.name)
 	elif area.name == 'forest':
 		walking.stream = load('res://Audio and sound effects/forest_walking.wav')
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/forest_noise.ogg')
-		#music.play()
+		music.play()
+		inside_area.append(area.name)
 	elif area.name == 'wizard_place':
 		music.set_volume_db(0)
 		music.stream = load('res://Audio and sound effects/wizard_mystery.ogg')

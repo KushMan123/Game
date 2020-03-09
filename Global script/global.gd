@@ -1,6 +1,6 @@
 extends Node2D
 
-var event_collection= ['Event_collection',"Event_1"]
+var event_collection= ['Event_collection',"Event 3"]
 var people_talked_collection= ['People_Collection']
 var item_collected_collection=['Item_Collection']
 var player_health
