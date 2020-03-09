@@ -33,6 +33,7 @@ func _dialogs():
 	if global.is_present(global.event_collection, 'Event 3'):
 		print("OKAYY...")
 		dialog.get_node("Text").set_bbcode("Chaos")
+		dialog.get_node("Text").set_visible_characters(0)
 		print("character 1")
 	else:
 		dialog.get_node("Text").set_bbcode(dialog.NPC_dialog[num])
