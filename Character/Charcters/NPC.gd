@@ -21,6 +21,7 @@ func _ready() -> void:
 #	$Tween.start()
 
 func _process(delta: float) -> void:
+	randomize()
 	var ran = rand_range(0,1)
 	
 	
